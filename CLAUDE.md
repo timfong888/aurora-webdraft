@@ -12,19 +12,101 @@ This repository is the Aurora marketing website, built for message testing befor
 **GitHub repo:** https://github.com/timfong888/aurora-webdraft
 **Local repo:** ~/development/aurora-webdraft
 
-## Messaging Source of Truth
+## Messaging — Use This Directly
 
-The primary messaging document is a Google Doc (requires auth to read):
-https://docs.google.com/document/d/1XhU2_qyFwOc6djYgt_W27gxeI_NuyFceU_GbLn0nBc4/edit?tab=t.7fvphbn84h1
+Messaging source: https://docs.google.com/document/d/1XhU2_qyFwOc6djYgt_W27gxeI_NuyFceU_GbLn0nBc4/edit?tab=t.7fvphbn84h1
+To re-sync: `composio execute GOOGLEDOCS_GET_DOCUMENT_PLAINTEXT -d '{"document_id":"1XhU2_qyFwOc6djYgt_W27gxeI_NuyFceU_GbLn0nBc4","include_tabs_content":true}'`
 
-Before writing any copy, read this doc and extract:
-- Each messaging pillar (headline + one-sentence description)
-- Primary audience definition and pain points
-- Approved copy blocks, taglines, positioning statements
+**Do not use Lorem Ipsum.** Use the copy below verbatim. Flag any edits as `[revised]`.
 
-Where copy is draft quality, refine it and flag each change as `[revised]` for stakeholder review.
+### Hero
 
-**Do not use Lorem Ipsum anywhere.** Every section must use copy from the Messaging Doc.
+- **Headline:** Per-token pricing hands every agent an unlimited credit card.
+- **Subheader:** Reserve your capacity and Aurora optimizes every token against it — full agentic throughput at a fixed, predictable cost, instead of a per-token bill with no ceiling.
+- **CTA buttons:** "Reserve Capacity" | "Talk to Us"
+
+### Problem (Section 2)
+
+Agentic AI maxes tokens by default. Multi-step reasoning, tool loops, and agent fan-out consume tokens with no natural ceiling. Per-token prices are falling, but agentic consumption is rising faster — so total spend climbs for customers with real production workloads.
+
+**Callout:** Cheaper tokens don't save you when you consume them faster than they get cheap.
+
+### Proof Bar (Section 3)
+
+- **Header:** max(tokens) has no upper bound. Your budget does.
+- **Tagline:** Token maxing is O(N). Optimization is O(1).
+- Visual: rising red "Token Maxing" line vs. flat green "Aurora (reserved)" line
+
+### Pillar 1 — Predictable Cost (Section 4)
+
+**Headline:** A fixed monthly cost, not a bill that grows with every request.
+
+Features:
+- Reserve capacity at a fixed monthly price
+- Rate-limiting inside the reservation keeps spend flat
+- Aurora owns the DC and GPUs — holds cost fixed where routers can't
+
+**Benefit:** Forecastable spend and protected margins even as agentic consumption explodes.
+**CTA:** "See Pricing"
+
+### Pillar 2 — Token Optimization (Section 5)
+
+**Headline:** More useful work per GPU.
+
+Features:
+- Complexity-based multi-model routing inside your reservation
+- Run fine-tuned open-source models (bring your LoRA)
+- Frontier models only where a request needs them
+
+**Benefit:** Lower effective cost per useful token; the right model for each step of an agent loop; no manual tuning.
+**CTA:** "See How It Works"
+
+### Pillar 3 — Production-Ready Capacity (Section 6)
+
+**Headline:** Built for production scale, not experiments.
+
+Features:
+- Owned GPU capacity — available now through the Blackwell crunch
+- Managed serving — zero infra ops burden
+- Latency control when others are booked out
+
+**CTA:** "Check Availability"
+
+### Finance / ROI Section (Section 7)
+
+**Header:** Token maxing isn't a budget overrun — it's a broken cost structure.
+
+- **Pain:** AI inference is becoming your largest variable COGS line — gross margin erodes exactly as you scale.
+- **Value:** Convert variable, uncapped COGS into a fixed reserved cost → predictable gross margin, defensible unit economics.
+- **CFO one-liner:** Optimization fixes the unit economics.
+- **Metrics to show:** cost per request · gross margin % · $/customer · budget variance vs. plan
+
+### Why Aurora vs. Alternatives (Section 8)
+
+| Alternative | Limitation | Aurora advantage |
+|---|---|---|
+| Per-token APIs (OpenAI, Anthropic) | Bill scales with every request | Fixed reserved cost |
+| Router-style services | Still per-token and variable | Optimization on top of reservation |
+| Raw GPU neocloud | You carry ops burden and self-optimize | Managed serving + routing built in |
+
+**Only Aurora line:** Owns the hardware → can sell a fixed cost. Optimization on top of the reservation → more throughput per reserved GPU. Capacity available now.
+
+### CTA Strip (Section 9)
+
+**Headline:** Beyond Token Maxing: The Path to Profitable AI
+**Subhead:** An evening on the economics of agentic AI — June 30, 2026, Frontier Tower SF.
+**Buttons:** "Reserve Your Spot" | "Talk to Us"
+
+### Market Category
+
+- Entry frame: reserved, predictable inference cloud for agentic workloads
+- Vision: the Token Optimization Cloud
+
+### Best-Fit Customer
+
+- Mid-market AI companies putting agentic workloads into production
+- Raised money at scaling tier; more domain-focused than model or developer focused
+- Example targets: Actively, Astrocade, Nura, Qualitate
 
 ## Competitive Reference
 
