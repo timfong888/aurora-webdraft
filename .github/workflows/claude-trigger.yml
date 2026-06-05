@@ -50,7 +50,7 @@ jobs:
         if: steps.permission.outputs.allowed == 'true'
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install dependencies
@@ -67,6 +67,17 @@ jobs:
           git config user.name "claude-agent[bot]"
           git config user.email "claude-agent[bot]@users.noreply.github.com"
 
+      - name: Validate API key
+        if: steps.permission.outputs.allowed == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::ANTHROPIC_API_KEY secret is empty or not set. Add it at Settings → Secrets → Actions."
+            exit 1
+          fi
+          echo "API key present (${#ANTHROPIC_API_KEY} chars)"
+
       - name: Run Claude
         if: steps.permission.outputs.allowed == 'true'
         env:
@@ -78,7 +89,7 @@ jobs:
           COMMENT="${{ github.event.comment.body }}"
           REPO="${{ github.repository }}"
 
-          claude --print "
+          claude -p "
           You are an autonomous agent working on the GitHub repo $REPO.
 
           An authorised collaborator left this comment on Issue #$ISSUE_NUMBER:
@@ -95,4 +106,4 @@ jobs:
           - If the comment says '@claude review': post a code review comment summarising what could be improved.
 
           Always follow the conventions in CLAUDE.md. Sign any GitHub comments or PR bodies with '(by Claude)'.
-          "
+          " --allowedTools "Bash,Read,Edit,Write" --dangerously-skip-permissions
