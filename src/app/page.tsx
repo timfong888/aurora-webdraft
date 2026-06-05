@@ -114,6 +114,29 @@ export default function Home() {
               Talk to Us
             </Link>
           </div>
+
+          {/* Partner / credential badge */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
+              <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-emerald-400" fill="currentColor" aria-hidden="true">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
+              </svg>
+              <span className="text-xs font-semibold text-slate-300">NVIDIA Partner</span>
+            </div>
+            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
+              <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-violet-400" fill="currentColor" aria-hidden="true">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span className="text-xs font-semibold text-slate-300">Blackwell Ready</span>
+            </div>
+            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
+              <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-sky-400" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+              <span className="text-xs font-semibold text-slate-300">Norway · Canada · Texas · New York</span>
+            </div>
+          </div>
         </div>
       </section>
 
