@@ -1,0 +1,98 @@
+name: Claude Agent Trigger
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+  pull-requests: write
+  contents: write
+
+jobs:
+  check-and-run:
+    # Only fire if comment contains @claude
+    if: contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check commenter permission
+        id: permission
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data } = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              username: context.actor,
+            });
+            const level = data.permission;
+            const allowed = ['admin', 'write'].includes(level);
+            console.log(`${context.actor} has permission: ${level} — allowed: ${allowed}`);
+            core.setOutput('allowed', allowed.toString());
+
+      - name: Ignore bots and unauthorised users
+        if: |
+          steps.permission.outputs.allowed != 'true' ||
+          github.event.comment.user.type == 'Bot'
+        run: |
+          echo "Skipping — commenter is a bot or lacks write permission."
+          exit 0
+
+      - name: Checkout repo
+        if: steps.permission.outputs.allowed == 'true'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        if: steps.permission.outputs.allowed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: steps.permission.outputs.allowed == 'true'
+        run: npm ci
+
+      - name: Install Claude Code
+        if: steps.permission.outputs.allowed == 'true'
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Configure git identity
+        if: steps.permission.outputs.allowed == 'true'
+        run: |
+          git config user.name "claude-agent[bot]"
+          git config user.email "claude-agent[bot]@users.noreply.github.com"
+
+      - name: Run Claude
+        if: steps.permission.outputs.allowed == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUMBER="${{ github.event.issue.number }}"
+          COMMENT="${{ github.event.comment.body }}"
+          REPO="${{ github.repository }}"
+
+          claude --print "
+          You are an autonomous agent working on the GitHub repo $REPO.
+
+          An authorised collaborator left this comment on Issue #$ISSUE_NUMBER:
+          ---
+          $COMMENT
+          ---
+
+          The full issue is at: https://github.com/$REPO/issues/$ISSUE_NUMBER
+
+          Instructions:
+          - If the comment says '@claude implement': read the issue, implement the requested change, create a branch named issue-${ISSUE_NUMBER}-claude-auto, commit, push, and open a PR that closes #${ISSUE_NUMBER}.
+          - If the comment says '@claude draft': do the same but open a Draft PR.
+          - If the comment says '@claude question': post a comment on the issue with clarifying questions before doing any implementation.
+          - If the comment says '@claude review': post a code review comment summarising what could be improved.
+
+          Always follow the conventions in CLAUDE.md. Sign any GitHub comments or PR bodies with '(by Claude)'.
+          "
