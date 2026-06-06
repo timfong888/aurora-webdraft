@@ -2,11 +2,6 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-// ─── Social Proof ────────────────────────────────────────────────────────────
-const LOGOS = [
-  "Actively", "Astrocade", "Nura", "Qualitate", "[ Your company ]",
-];
-
 // ─── Pillars ─────────────────────────────────────────────────────────────────
 const PILLARS = [
   {
@@ -114,25 +109,6 @@ export default function Home() {
               </svg>
               <span className="text-xs font-semibold text-slate-300">Norway · Canada · Texas · New York</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Social Proof ──────────────────────────────────────────────────── */}
-      <section className="border-y border-white/10 bg-slate-900/50 px-6 py-8">
-        <div className="mx-auto max-w-5xl">
-          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-widest text-slate-500">
-            Trusted by AI teams putting agentic workloads into production
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {LOGOS.map((name) => (
-              <span
-                key={name}
-                className="text-sm font-semibold text-slate-400"
-              >
-                {name}
-              </span>
-            ))}
           </div>
         </div>
       </section>
