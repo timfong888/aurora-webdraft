@@ -62,18 +62,6 @@ const PILLARS = [
     icon: "◈",
   },
   {
-    label: "Token Optimization",
-    headline: "More useful work per GPU.",
-    features: [
-      "Complexity-based multi-model routing inside your reservation",
-      "Run fine-tuned open-source models — bring your LoRA",
-      "Frontier models only where a request truly needs them",
-    ],
-    benefit: "Lower effective cost per useful token; the right model for each step of an agent loop.",
-    cta: { label: "See How It Works", href: "/products" },
-    icon: "◎",
-  },
-  {
     label: "Production-Ready Capacity",
     headline: "Built for production scale, not experiments.",
     features: [
@@ -84,6 +72,22 @@ const PILLARS = [
     benefit: "Capacity when you need it, performance you can rely on.",
     cta: { label: "Check Availability", href: "/contact" },
     icon: "◉",
+  },
+];
+
+// ─── Inference / Token Factory features (Issue #7) ─────────────────────────────
+const TOKEN_FACTORY_FEATURES = [
+  {
+    icon: "⤳",
+    body: "Complexity-based multi-model routing inside your reservation",
+  },
+  {
+    icon: "◍",
+    body: "Run fine-tuned open-source models — bring your LoRA",
+  },
+  {
+    icon: "✦",
+    body: "Frontier models only where a request needs them",
   },
 ];
 
@@ -247,15 +251,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Inference / Token Factory (Issue #7) ──────────────────────────── */}
+      <section id="inference" className="px-6 py-24 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-violet-400">
+              Inference / Token Factory
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              More useful work per GPU.
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+              Lower effective cost per useful token — the right model for each
+              step of an agent loop, with no manual tuning.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-8 lg:grid-cols-3">
+            {TOKEN_FACTORY_FEATURES.map((feature) => (
+              <div
+                key={feature.body}
+                className="flex flex-col rounded-xl border border-white/10 bg-slate-900 p-6"
+              >
+                <span className="mb-4 text-2xl text-violet-400" aria-hidden="true">
+                  {feature.icon}
+                </span>
+                <p className="text-base font-medium leading-snug text-white">
+                  {feature.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/contact"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "bg-violet-600 px-8 text-white hover:bg-violet-500"
+              )}
+            >
+              See How It Works
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Pillars ───────────────────────────────────────────────────────── */}
       <section className="px-6 py-24 sm:px-8">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-3xl">
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               How Aurora holds the line
             </h2>
           </div>
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2">
             {PILLARS.map((pillar) => (
               <div
                 key={pillar.label}
