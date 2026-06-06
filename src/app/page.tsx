@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { PerformanceStats } from "@/components/PerformanceStats";
 
 // ─── Social Proof ────────────────────────────────────────────────────────────
 const LOGOS = [
@@ -286,6 +287,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Performance Metrics ───────────────────────────────────────────── */}
+      <PerformanceStats />
 
       {/* ── Finance / ROI ─────────────────────────────────────────────────── */}
       <section className="border-y border-white/10 bg-slate-900 px-6 py-24 sm:px-8">
