@@ -47,28 +47,6 @@ const PILLARS = [
   },
 ];
 
-// ─── Alternatives ─────────────────────────────────────────────────────────────
-const ALTERNATIVES = [
-  {
-    name: "Per-token APIs",
-    examples: "OpenAI, Anthropic",
-    limitation: "Bill scales with every agent request — success becomes a runaway cost",
-    aurora: "Fixed reserved cost regardless of token volume",
-  },
-  {
-    name: "Router-style services",
-    examples: "LiteLLM, OpenRouter",
-    limitation: "Still per-token and variable — optimize price, not volume",
-    aurora: "Optimization built into the serving layer on top of your reservation",
-  },
-  {
-    name: "Raw GPU neoclouds",
-    examples: "Lambda, Together, RunPod",
-    limitation: "You carry the ops burden and self-optimize routing",
-    aurora: "Managed serving + complexity routing built in",
-  },
-];
-
 // ─── Page ────────────────────────────────────────────────────────────────────
 export default function Home() {
   return (
@@ -329,50 +307,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── Why Aurora ────────────────────────────────────────────────────── */}
-      <section className="px-6 py-24 sm:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Why not just use what you already have?
-            </h2>
-          </div>
-          <div className="overflow-hidden rounded-xl border border-white/10">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-white/10 bg-slate-900">
-                  <th className="px-5 py-4 text-left font-semibold text-slate-300">Alternative</th>
-                  <th className="px-5 py-4 text-left font-semibold text-slate-300">The problem</th>
-                  <th className="px-5 py-4 text-left font-semibold text-emerald-400">Aurora</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ALTERNATIVES.map((row, i) => (
-                  <tr
-                    key={row.name}
-                    className={cn(
-                      "border-b border-white/10 last:border-0",
-                      i % 2 === 0 ? "bg-slate-950" : "bg-slate-900/50"
-                    )}
-                  >
-                    <td className="px-5 py-4">
-                      <p className="font-medium text-white">{row.name}</p>
-                      <p className="text-xs text-slate-500">{row.examples}</p>
-                    </td>
-                    <td className="px-5 py-4 text-slate-400">{row.limitation}</td>
-                    <td className="px-5 py-4 text-slate-200">{row.aurora}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-6 text-center text-sm text-slate-400">
-            Only Aurora owns the hardware — so only Aurora can sell a fixed cost.
-            Routers and resellers can&apos;t escape per-token billing.
-          </p>
         </div>
       </section>
 
