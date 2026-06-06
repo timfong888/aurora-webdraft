@@ -1,12 +1,12 @@
 # Aurora — The Token Optimization Cloud
 
-> Reserved, predictable inference cloud for agentic AI workloads. Reserve your capacity and Aurora optimizes every token against it — full agentic throughput at a fixed, predictable cost, instead of a per-token bill with no ceiling.
+> Reserved, predictable inference cloud for agentic AI workloads. Reserve inference GPUs and Aurora optimizes every token against them — full agentic throughput at a predictable cost, instead of a per-token bill with no ceiling.
 
 ## Hero
 
 Headline: Per-token pricing hands every agent an unlimited credit card.
 
-Subheader: Reserve your capacity and Aurora optimizes every token against it — full agentic throughput at a fixed, predictable cost, instead of a per-token bill with no ceiling.
+Subheader: Reserve inference GPUs and Aurora optimizes every token against them — full agentic throughput at a predictable cost, instead of a per-token bill with no ceiling.
 
 Primary actions: Reserve Capacity · Talk to Us.
 
@@ -20,17 +20,17 @@ Callout: Cheaper tokens don't save you when you consume them faster than they ge
 
 max(tokens) has no upper bound. Your budget does.
 
-Token maxing is O(N). Optimization is O(1).
+Token maxing is O(N). ValueMaxxing™ is O(1).
 
-Under per-token pricing, every new agent capability, every longer reasoning chain, every fan-out adds directly to your bill. Aurora decouples capability from cost.
+Under per-token pricing, every new agent capability, every longer reasoning chain, every fan-out adds directly to your bill. Aurora reserves inference GPUs and optimizes every token against them — ValueMaxxing™, not token maxing.
 
 ## Pillar 1 — Predictable cost
 
-Headline: A fixed monthly cost, not a bill that grows with every request.
+Headline: A predictable monthly cost on reserved inference GPUs, not a bill that grows with every request.
 
-- Reserve capacity at a fixed monthly price.
-- Rate-limiting inside the reservation keeps spend flat.
-- Aurora owns the DC and GPUs — holds cost fixed where routers can't.
+- Reserve inference GPUs at a predictable monthly price.
+- Spend tracks your reservation, not your per-request volume.
+- Aurora owns the DC and GPUs — keeps cost predictable where routers can't.
 
 Benefit: Forecastable spend and protected margins even as agentic consumption explodes.
 
@@ -57,17 +57,17 @@ Headline: Built for production scale, not experiments.
 Token maxing isn't a budget overrun — it's a broken cost structure.
 
 - Pain: AI inference is becoming your largest variable COGS (cost of goods sold) line — gross margin erodes exactly as you scale.
-- Value: Convert variable, uncapped COGS into a fixed reserved cost → predictable gross margin, defensible unit economics.
-- CFO one-liner: Optimization fixes the unit economics.
+- Value: Convert variable, uncapped COGS into reserved inference GPUs → predictable gross margin, defensible unit economics.
+- CFO one-liner: ValueMaxxing™ fixes the unit economics.
 - Metrics to track: cost per request · gross margin % · $/customer · budget variance vs. plan.
 
 ## Why Aurora vs. alternatives
 
-- Per-token APIs (e.g. OpenAI, Anthropic): the bill scales with every request. Aurora advantage: fixed reserved cost.
+- Per-token APIs (e.g. OpenAI, Anthropic): the bill scales with every request. Aurora advantage: reserved inference GPUs at a predictable cost.
 - Router-style services: still per-token and variable. Aurora advantage: optimization on top of the reservation.
 - Raw GPU neoclouds: you carry the ops burden and self-optimize. Aurora advantage: managed serving + routing built in.
 
-Only Aurora owns the hardware → it can sell a fixed cost. Optimization on top of the reservation → more throughput per reserved GPU. Capacity available now.
+Only Aurora owns the hardware → it reserves inference GPUs at a predictable cost. Optimization on top of the reservation (ValueMaxxing™) → more throughput per reserved GPU. Capacity available now.
 
 ## Event
 

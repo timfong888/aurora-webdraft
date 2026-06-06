@@ -19,10 +19,28 @@ To re-sync: `composio execute GOOGLEDOCS_GET_DOCUMENT_PLAINTEXT -d '{"document_i
 
 **Do not use Lorem Ipsum.** Use the copy below verbatim. Flag any edits as `[revised]`.
 
+### Messaging nuance — anchor on reserved inference GPUs (Issue #3)
+
+Per Tim's direction on [Issue #3](https://github.com/timfong888/aurora-webdraft/issues/3), the
+positioning is anchored on **reserved inference GPUs**, not "fixed cost":
+
+- **Do not use the term "fixed cost"** (or "fixed monthly cost", "holds cost fixed",
+  etc.) anywhere. Underlying, Aurora reserves GPUs for inference; the customer-facing
+  word is *reserved* / *predictable*, never *fixed*.
+- **Do not imply a time-slice constraint.** Aurora does **not** currently constrain by
+  time slice, so avoid "rate-limiting keeps spend flat" and similar throttling language.
+  Frame it as: spend tracks your reservation, not your per-request volume.
+- **ValueMaxxing™** is Aurora's named counter-discipline to *token maxing*: optimize
+  cost toward value per token (and per reserved GPU), not token volume. Use it as the
+  green/Aurora counterpart wherever the copy contrasts with "token maxing".
+- This nuance must propagate everywhere — the Google Doc messaging source (update
+  manually) and the website. The site copy in `src/` and `public/llms*.txt` was updated
+  in Issue #3; the copy below reflects the new wording.
+
 ### Hero
 
 - **Headline:** Per-token pricing hands every agent an unlimited credit card.
-- **Subheader:** Reserve your capacity and Aurora optimizes every token against it — full agentic throughput at a fixed, predictable cost, instead of a per-token bill with no ceiling.
+- **Subheader:** Reserve inference GPUs and Aurora optimizes every token against them — full agentic throughput at a predictable cost, instead of a per-token bill with no ceiling. [revised]
 - **CTA buttons:** "Reserve Capacity" | "Talk to Us"
 
 ### Problem (Section 2)
@@ -34,17 +52,17 @@ Agentic AI maxes tokens by default. Multi-step reasoning, tool loops, and agent 
 ### Proof Bar (Section 3)
 
 - **Header:** max(tokens) has no upper bound. Your budget does.
-- **Tagline:** Token maxing is O(N). Optimization is O(1).
-- Visual: rising red "Token Maxing" line vs. flat green "Aurora (reserved)" line
+- **Tagline:** Token maxing is O(N). ValueMaxxing™ is O(1). [revised]
+- Visual: rising red "Token Maxing" line vs. flat green "ValueMaxxing (reserved GPUs)" line
 
 ### Pillar 1 — Predictable Cost (Section 4)
 
-**Headline:** A fixed monthly cost, not a bill that grows with every request.
+**Headline:** A predictable monthly cost on reserved inference GPUs, not a bill that grows with every request. [revised]
 
 Features:
-- Reserve capacity at a fixed monthly price
-- Rate-limiting inside the reservation keeps spend flat
-- Aurora owns the DC and GPUs — holds cost fixed where routers can't
+- Reserve inference GPUs at a predictable monthly price [revised]
+- Spend tracks your reservation, not your per-request volume [revised]
+- Aurora owns the DC and GPUs — keeps cost predictable where routers can't [revised]
 
 **Benefit:** Forecastable spend and protected margins even as agentic consumption explodes.
 **CTA:** "See Pricing"
@@ -77,19 +95,19 @@ Features:
 **Header:** Token maxing isn't a budget overrun — it's a broken cost structure.
 
 - **Pain:** AI inference is becoming your largest variable COGS line — gross margin erodes exactly as you scale.
-- **Value:** Convert variable, uncapped COGS into a fixed reserved cost → predictable gross margin, defensible unit economics.
-- **CFO one-liner:** Optimization fixes the unit economics.
+- **Value:** Convert variable, uncapped COGS into reserved inference GPUs → predictable gross margin, defensible unit economics. [revised]
+- **CFO one-liner:** ValueMaxxing™ fixes the unit economics. [revised]
 - **Metrics to show:** cost per request · gross margin % · $/customer · budget variance vs. plan
 
 ### Why Aurora vs. Alternatives (Section 8)
 
 | Alternative | Limitation | Aurora advantage |
 |---|---|---|
-| Per-token APIs (OpenAI, Anthropic) | Bill scales with every request | Fixed reserved cost |
+| Per-token APIs (OpenAI, Anthropic) | Bill scales with every request | Reserved inference GPUs at a predictable cost |
 | Router-style services | Still per-token and variable | Optimization on top of reservation |
 | Raw GPU neocloud | You carry ops burden and self-optimize | Managed serving + routing built in |
 
-**Only Aurora line:** Owns the hardware → can sell a fixed cost. Optimization on top of the reservation → more throughput per reserved GPU. Capacity available now.
+**Only Aurora line:** Owns the hardware → reserves inference GPUs at a predictable cost. Optimization on top of the reservation — ValueMaxxing™ → more throughput per reserved GPU. Capacity available now. [revised]
 
 ### CTA Strip (Section 9)
 

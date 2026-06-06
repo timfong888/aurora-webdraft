@@ -51,11 +51,11 @@ const JSON_LD = {
 const PILLARS = [
   {
     label: "Predictable Cost",
-    headline: "A fixed monthly cost, not a bill that grows with every request.",
+    headline: "A predictable monthly cost on reserved inference GPUs, not a bill that grows with every request.",
     features: [
-      "Reserve capacity at a fixed monthly price",
-      "Rate-limiting inside the reservation keeps spend flat",
-      "Aurora owns the DC and GPUs — holds cost fixed where routers can't",
+      "Reserve inference GPUs at a predictable monthly price",
+      "Spend tracks your reservation, not your per-request volume",
+      "Aurora owns the DC and GPUs — keeps cost predictable where routers can't",
     ],
     benefit: "Forecastable spend and protected margins even as agentic consumption explodes.",
     cta: { label: "See Pricing", href: "/pricing" },
@@ -113,8 +113,8 @@ export default function Home() {
             <span className="text-violet-400">an unlimited credit card.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Reserve your capacity and Aurora optimizes every token against it —
-            full agentic throughput at a fixed, predictable cost, instead of a
+            Reserve inference GPUs and Aurora optimizes every token against
+            them — full agentic throughput at a predictable cost, instead of a
             per-token bill with no ceiling.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -199,17 +199,18 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-slate-300">
                 Token maxing is <span className="font-mono font-bold text-red-400">O(N)</span>.
-                Optimization is <span className="font-mono font-bold text-emerald-400">O(1)</span>.
+                ValueMaxxing™ is <span className="font-mono font-bold text-emerald-400">O(1)</span>.
               </p>
               <p className="mt-3 text-sm text-slate-400">
                 Under per-token pricing, every new agent capability, every
                 longer reasoning chain, every fan-out adds directly to your
-                bill. Aurora decouples capability from cost.
+                bill. Aurora reserves inference GPUs and optimizes every token
+                against them — ValueMaxxing™, not token maxing.
               </p>
             </div>
             {/* Chart */}
             <div className="rounded-xl border border-white/10 bg-slate-950 p-6">
-              <svg viewBox="0 0 300 180" className="w-full" aria-label="Token maxing O(N) vs Aurora O(1) chart">
+              <svg viewBox="0 0 300 180" className="w-full" aria-label="Token maxing O(N) vs Aurora ValueMaxxing O(1) chart">
                 <defs>
                   <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
                     <stop offset="0%" stopColor="#ef4444" stopOpacity="0.3" />
@@ -237,7 +238,7 @@ export default function Home() {
                 <line x1="40" y1="100" x2="280" y2="100" stroke="#10b981" strokeWidth="2.5" />
                 {/* Labels */}
                 <text x="170" y="28" fontSize="9" fill="#ef4444" fontWeight="bold">Token Maxing — O(N)</text>
-                <text x="170" y="95" fontSize="9" fill="#10b981" fontWeight="bold">Aurora reserved — O(1)</text>
+                <text x="170" y="95" fontSize="9" fill="#10b981" fontWeight="bold">ValueMaxxing — O(1)</text>
                 {/* Dots */}
                 <circle cx="280" cy="20" r="3" fill="#ef4444" />
                 <circle cx="280" cy="100" r="3" fill="#10b981" />
@@ -308,20 +309,20 @@ export default function Home() {
                 every capability improvement directly to your cloud provider.
               </p>
               <p className="mt-4 text-slate-300">
-                Aurora converts variable, uncapped COGS into a fixed reserved
-                cost — predictable gross margin, defensible unit economics, and
-                inference spend fixed against plan. {/* [revised] softened from "no budget variance at board time" — reserving capacity fixes the reservation cost, not total budget variance */}
+                Aurora converts variable, uncapped COGS into reserved inference
+                GPUs — predictable gross margin, defensible unit economics, and
+                inference spend you can plan against. {/* [revised] Issue #3: anchor on reserved inference GPUs; drop "fixed cost" */}
               </p>
               <p className="mt-6 rounded-lg border border-violet-500/30 bg-violet-500/10 px-5 py-4 text-sm font-medium text-violet-200">
-                Optimization fixes the unit economics.
+                ValueMaxxing™ fixes the unit economics.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { metric: "Cost per request", desc: "Fixed, not variable" },
+                { metric: "Cost per request", desc: "Reserved, not variable" },
                 { metric: "Gross margin %", desc: "Protected as you scale" },
                 { metric: "$/customer", desc: "Predictable unit economics" },
-                { metric: "Budget variance", desc: "Fixed against plan" }, // [revised] softened from "Zero — reserved in advance" — reservation fixes cost, not literal zero variance
+                { metric: "Budget variance", desc: "Planned in advance" }, // [revised] Issue #3: "reserved"/"planned", not "fixed" — anchor on reserved inference GPUs
               ].map((item) => (
                 <div
                   key={item.metric}

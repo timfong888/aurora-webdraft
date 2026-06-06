@@ -32,14 +32,14 @@ export default async function ContactPage({
               Talk to Aurora
             </h1>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              Reserve your inference capacity, get a fixed-cost quote for your
+              Reserve inference GPUs, get a reserved-capacity quote for your
               agentic workload, or RSVP to our June 30 evening on the economics
               of agentic AI.
             </p>
             <ul className="mt-8 space-y-3 text-sm text-slate-300">
               <li className="flex gap-2">
                 <span className="mt-0.5 shrink-0 text-emerald-400">✓</span>
-                A fixed monthly cost, not a bill that grows with every request.
+                A predictable monthly cost on reserved inference GPUs, not a bill that grows with every request.
               </li>
               <li className="flex gap-2">
                 <span className="mt-0.5 shrink-0 text-emerald-400">✓</span>

@@ -59,8 +59,8 @@ export default function OpengraphImage() {
             <span style={{ color: "#a78bfa" }}>an unlimited credit card.</span>
           </div>
           <div style={{ fontSize: 30, color: "#cbd5e1" }}>
-            Reserve capacity. Optimize every token against it. Fixed,
-            predictable cost.
+            Reserve inference GPUs. Optimize every token against them.
+            Predictable cost.
           </div>
         </div>
 
@@ -70,7 +70,7 @@ export default function OpengraphImage() {
           </span>
           <span style={{ color: "#64748b" }}>·</span>
           <span style={{ color: "#34d399", fontWeight: 700 }}>
-            Optimization is O(1)
+            ValueMaxxing is O(1)
           </span>
         </div>
       </div>

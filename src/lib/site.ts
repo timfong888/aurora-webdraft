@@ -11,4 +11,4 @@ export const SITE_URL = (
 export const SITE_NAME = "Aurora";
 export const SITE_TAGLINE = "The Token Optimization Cloud";
 export const SITE_DESCRIPTION =
-  "Reserve your inference capacity and Aurora optimizes every token against it — full agentic throughput at a fixed, predictable cost, instead of a per-token bill with no ceiling.";
+  "Reserve inference GPUs and Aurora optimizes every token against them — full agentic throughput at a predictable cost, instead of a per-token bill with no ceiling.";
