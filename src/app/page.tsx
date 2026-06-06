@@ -259,8 +259,8 @@ export default function Home() {
               </p>
               <p className="mt-4 text-slate-300">
                 Aurora converts variable, uncapped COGS into a fixed reserved
-                cost — predictable gross margin, defensible unit economics, no
-                budget variance at board time.
+                cost — predictable gross margin, defensible unit economics, and
+                inference spend fixed against plan. {/* [revised] softened from "no budget variance at board time" — reserving capacity fixes the reservation cost, not total budget variance */}
               </p>
               <p className="mt-6 rounded-lg border border-violet-500/30 bg-violet-500/10 px-5 py-4 text-sm font-medium text-violet-200">
                 Optimization fixes the unit economics.
@@ -271,7 +271,7 @@ export default function Home() {
                 { metric: "Cost per request", desc: "Fixed, not variable" },
                 { metric: "Gross margin %", desc: "Protected as you scale" },
                 { metric: "$/customer", desc: "Predictable unit economics" },
-                { metric: "Budget variance", desc: "Zero — reserved in advance" },
+                { metric: "Budget variance", desc: "Fixed against plan" }, // [revised] softened from "Zero — reserved in advance" — reservation fixes cost, not literal zero variance
               ].map((item) => (
                 <div
                   key={item.metric}
