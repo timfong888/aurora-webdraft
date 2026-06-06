@@ -187,12 +187,28 @@ Sections 4–9 (Issues #7–#12) are independent. To build them in parallel:
 
 ## Point-and-Click Feedback Tooling (Issues #15–#16)
 
-After the site is deployed, implement a feedback tool that:
-- Allows point-and-click comments on any page element
-- Posts notes as GitHub Issues on this repo
-- Has a free tier and works as a framework-agnostic embed
+**Decided: use [Vercel Comments](https://vercel.com/docs/comments), not custom code.**
 
-Candidates to evaluate: Marker.io, BugHerd, Ruttl, VisualFeedback.
+Vercel Comments is the built-in point-and-click feedback layer on every Vercel
+deployment. It satisfies the original goal — pin a comment to any page element on
+the deployed site — with zero embed code, no API route, and no third-party
+account. Reviewers click the element, leave a note, and the thread lives on the
+deployment in the Vercel dashboard.
+
+Tickets: [#15](https://github.com/timfong888/aurora-webdraft/issues/15) (select
+and enable the tool) · [#16](https://github.com/timfong888/aurora-webdraft/issues/16)
+(end-to-end test). See README → "Leaving feedback (Vercel Comments)" for setup.
+
+Superseded:
+- The custom point-and-click widget + `/api/feedback` route on branch
+  `issue-15-claude-auto` is abandoned — do not merge it.
+- Evaluated and dropped third-party candidates: Marker.io, BugHerd, Ruttl,
+  VisualFeedback. Vercel Comments wins on zero-code and native deployment scope.
+
+Note: Vercel Comments keeps threads in Vercel (with Slack/Linear/Jira
+integrations), so the original "appears as a GitHub Issue within 60s" criterion no
+longer applies — feedback is triaged in Vercel and promoted to a GitHub Issue
+manually when it warrants tracked work.
 
 ## Repository Conventions
 
