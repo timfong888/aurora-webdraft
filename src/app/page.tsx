@@ -27,7 +27,7 @@ const JSON_LD = {
       "@type": "Event",
       name: "Beyond Token Maxing: The Path to Profitable AI",
       description:
-        "An evening on the economics of agentic AI — for the engineers building it and the finance leaders funding it.",
+        "An evening on the economics of agentic AI — June 30, 2026, Frontier Tower SF.",
       startDate: "2026-06-30T18:00:00-07:00",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       eventStatus: "https://schema.org/EventScheduled",
@@ -66,10 +66,10 @@ const PILLARS = [
     headline: "More useful work per GPU.",
     features: [
       "Complexity-based multi-model routing inside your reservation",
-      "Run fine-tuned open-source models — bring your LoRA",
-      "Frontier models only where a request truly needs them",
+      "Run fine-tuned open-source models (bring your LoRA)",
+      "Frontier models only where a request needs them",
     ],
-    benefit: "Lower effective cost per useful token; the right model for each step of an agent loop.",
+    benefit: "Lower effective cost per useful token; the right model for each step of an agent loop; no manual tuning.",
     cta: { label: "See How It Works", href: "/products" },
     icon: "◎",
   },
@@ -171,8 +171,8 @@ export default function Home() {
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-300">
             Multi-step reasoning, tool loops, and agent fan-out consume tokens
-            with no natural ceiling. Per-token prices are falling — but agentic
-            consumption is rising faster. So total spend climbs for every team
+            with no natural ceiling. Per-token prices are falling, but agentic
+            consumption is rising faster — so total spend climbs for customers
             with real production workloads.
           </p>
           <div className="mt-8 rounded-xl border border-red-500/20 bg-red-500/5 px-6 py-5">
@@ -303,9 +303,8 @@ export default function Home() {
                 Token maxing isn&apos;t a budget overrun — it&apos;s a broken cost structure.
               </h2>
               <p className="mt-5 text-slate-300">
-                AI inference is becoming your largest variable COGS line. Gross
-                margin erodes exactly as you scale. Per-token billing hands
-                every capability improvement directly to your cloud provider.
+                AI inference is becoming your largest variable COGS line — gross
+                margin erodes exactly as you scale.
               </p>
               <p className="mt-4 text-slate-300">
                 Aurora converts variable, uncapped COGS into a fixed reserved
@@ -347,8 +346,7 @@ export default function Home() {
             Beyond Token Maxing: The Path to Profitable AI
           </h2>
           <p className="mt-4 text-slate-300">
-            An evening on the economics of agentic AI — for the engineers
-            building it and the finance leaders funding it.
+            An evening on the economics of agentic AI.
           </p>
           <p className="mt-2 text-sm font-medium text-violet-400">
             June 30, 2026 · Frontier Tower, San Francisco
