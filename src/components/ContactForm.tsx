@@ -15,7 +15,7 @@ const INTERESTS = [
 ] as const;
 
 const fieldClass =
-  "w-full rounded-md border border-white/10 bg-slate-950 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-violet-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500";
+  "w-full rounded-md border border-white/10 bg-slate-950 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:border-violet-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500";
 const labelClass = "mb-1.5 block text-sm font-medium text-slate-200";
 
 function SubmitButton() {
@@ -111,7 +111,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
 
       <div>
         <label htmlFor="message" className={labelClass}>
-          Anything we should know? <span className="text-slate-500">(optional)</span>
+          Anything we should know? <span className="text-slate-400">(optional)</span>
         </label>
         <textarea id="message" name="message" rows={4} className={fieldClass} />
       </div>

@@ -181,6 +181,12 @@ export default function Home() {
               they get cheap.
             </p>
           </div>
+          <Link
+            href="/contact?interest=Reserve%20capacity"
+            className="mt-8 inline-block text-sm font-medium text-violet-400 hover:text-violet-300"
+          >
+            Cap your token spend with reserved capacity →
+          </Link>
         </div>
       </section>
 
@@ -206,6 +212,12 @@ export default function Home() {
                 longer reasoning chain, every fan-out adds directly to your
                 bill. Aurora decouples capability from cost.
               </p>
+              <Link
+                href="/contact?interest=Talk%20to%20us"
+                className="mt-6 inline-block text-sm font-medium text-violet-400 hover:text-violet-300"
+              >
+                See how the math works for your workload →
+              </Link>
             </div>
             {/* Chart */}
             <div className="rounded-xl border border-white/10 bg-slate-950 p-6">
@@ -315,6 +327,12 @@ export default function Home() {
               <p className="mt-6 rounded-lg border border-violet-500/30 bg-violet-500/10 px-5 py-4 text-sm font-medium text-violet-200">
                 Optimization fixes the unit economics.
               </p>
+              <Link
+                href="/contact?interest=Talk%20to%20us"
+                className="mt-6 inline-block text-sm font-medium text-violet-400 hover:text-violet-300"
+              >
+                Talk through the economics with us →
+              </Link>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
@@ -381,7 +399,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500">Product</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">Product</p>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><Link href="/products" className="hover:text-white">Inference</Link></li>
                 <li><Link href="/products" className="hover:text-white">GPU Access</Link></li>
@@ -389,14 +407,14 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500">Developers</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">Developers</p>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><Link href="/docs" className="hover:text-white">Documentation</Link></li>
                 <li><Link href="/docs" className="hover:text-white">API Reference</Link></li>
               </ul>
             </div>
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500">Company</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">Company</p>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><Link href="/company" className="hover:text-white">About</Link></li>
                 <li><Link href="/customers" className="hover:text-white">Customers</Link></li>
@@ -404,7 +422,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500">Newsletter</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">Newsletter</p>
               <p className="text-sm text-slate-400">Updates on token optimization and agentic AI economics.</p>
               <Link href="/contact" className="mt-3 inline-block text-sm font-medium text-violet-400 hover:text-violet-300">
                 Stay in touch →
@@ -415,7 +433,7 @@ export default function Home() {
             <p className="text-sm font-bold text-white">
               <span className="text-violet-400">▲</span> Aurora
             </p>
-            <p className="text-xs text-slate-500">© 2026 Aurora. All rights reserved.</p>
+            <p className="text-xs text-slate-400">© 2026 Aurora. All rights reserved.</p>
           </div>
         </div>
       </footer>
