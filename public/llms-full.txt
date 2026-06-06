@@ -30,7 +30,7 @@ Headline: A predictable monthly cost on reserved inference GPUs, not a bill that
 
 - Reserve inference GPUs at a predictable monthly price.
 - Spend tracks your reservation, not your per-request volume.
-- Aurora owns the DC and GPUs — keeps cost predictable where routers can't.
+- Dedicated reserved GPUs — keeps cost predictable where routers can't.
 
 Benefit: Forecastable spend and protected margins even as agentic consumption explodes.
 
@@ -48,7 +48,7 @@ Benefit: Lower effective cost per useful token; the right model for each step of
 
 Headline: Built for production scale, not experiments.
 
-- Owned GPU capacity — available now through the Blackwell crunch.
+- Reserved GPU capacity — available now through the Blackwell crunch.
 - Managed serving — zero infra ops burden.
 - Latency control when others are booked out.
 
@@ -67,7 +67,7 @@ Token maxing isn't a budget overrun — it's a broken cost structure.
 - Router-style services: still per-token and variable. Aurora advantage: optimization on top of the reservation.
 - Raw GPU neoclouds: you carry the ops burden and self-optimize. Aurora advantage: managed serving + routing built in.
 
-Only Aurora owns the hardware → it reserves inference GPUs at a predictable cost. Optimization on top of the reservation (ValueMaxxing™) → more throughput per reserved GPU. Capacity available now.
+Only Aurora reserves dedicated inference GPUs at a predictable cost. Optimization on top of the reservation (ValueMaxxing™) → more throughput per reserved GPU. Capacity available now.
 
 ## Event
 

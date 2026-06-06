@@ -43,7 +43,7 @@ export default async function ContactPage({
               </li>
               <li className="flex gap-2">
                 <span className="mt-0.5 shrink-0 text-emerald-400">✓</span>
-                Owned GPU capacity — available now through the Blackwell crunch.
+                Reserved GPU capacity — available now through the Blackwell crunch.
               </li>
               <li className="flex gap-2">
                 <span className="mt-0.5 shrink-0 text-emerald-400">✓</span>

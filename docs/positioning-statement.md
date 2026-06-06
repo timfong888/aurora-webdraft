@@ -30,7 +30,7 @@
 ## Why this is the differentiator (from Issue #2)
 
 The competitive analysis in Issue #2 identifies two adjacent players and the gap Aurora
-occupies. The differentiator is the **combination of owned hardware → reserved inference
+occupies. The differentiator is the **combination of dedicated reserved inference
 GPUs at a predictable cost → token optimization (ValueMaxxing™) inside the reservation** —
 a combination neither competitor offers. (Source: the "Only Aurora line" and "Market
 Category" entries in `CLAUDE.md`, which encode the Issue #2 finding.)
@@ -41,7 +41,7 @@ Category" entries in `CLAUDE.md`, which encode the Issue #2 finding.)
 | **Nebius** | Enterprise-focused GPU infrastructure | Raw GPU / neocloud — you carry ops and self-optimize | Aurora is **managed serving + routing**, optimization built in |
 | **Aurora** | **The Token Optimization Cloud** — reserved, predictable inference for agentic workloads | **Reserved inference GPUs at a predictable cost** | — |
 
-**Only Aurora** owns the hardware → reserves inference GPUs at a predictable cost; layers
+**Only Aurora** reserves dedicated inference GPUs at a predictable cost; layers
 optimization on top of the reservation (ValueMaxxing™) → more useful throughput per
 reserved GPU; with capacity available now through the Blackwell crunch.
 

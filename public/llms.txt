@@ -1,13 +1,13 @@
 # Aurora
 
-> Aurora is the Token Optimization Cloud: a reserved, predictable inference cloud for agentic AI workloads. Reserve inference GPUs and Aurora optimizes every token against that reservation — full agentic throughput at a predictable cost, instead of a per-token bill with no ceiling. Aurora owns its data centers and GPUs, so it reserves inference capacity where per-token APIs and router-style services cannot. This is ValueMaxxing™: optimize cost toward value per token, not token volume.
+> Aurora is the Token Optimization Cloud: a reserved, predictable inference cloud for agentic AI workloads. Reserve inference GPUs and Aurora optimizes every token against that reservation — full agentic throughput at a predictable cost, instead of a per-token bill with no ceiling. Aurora reserves dedicated inference GPUs, so it holds capacity at a predictable cost where per-token APIs and router-style services cannot. This is ValueMaxxing™: optimize cost toward value per token, not token volume.
 
 The core problem Aurora solves: agentic AI maxes tokens by default. Multi-step reasoning, tool loops, and agent fan-out consume tokens with no natural ceiling. Per-token prices are falling, but agentic consumption is rising faster — so total spend climbs for teams with real production workloads. Aurora's framing: token maxing is O(N); ValueMaxxing™ is O(1).
 
 How it works (three pillars):
-- Predictable cost — reserve inference GPUs at a predictable monthly price; spend tracks your reservation, not your per-request volume; Aurora owns the DC and GPUs, keeping cost predictable where routers can't.
+- Predictable cost — reserve inference GPUs at a predictable monthly price; spend tracks your reservation, not your per-request volume; Aurora runs dedicated reserved GPUs, keeping cost predictable where routers can't.
 - Token optimization — complexity-based multi-model routing inside your reservation; run fine-tuned open-source models (bring your LoRA); frontier models only where a request needs them.
-- Production-ready capacity — owned GPU capacity available now through the Blackwell crunch; managed serving with zero infra ops burden; latency control when others are booked out.
+- Production-ready capacity — reserved GPU capacity available now through the Blackwell crunch; managed serving with zero infra ops burden; latency control when others are booked out.
 
 Best-fit customer: mid-market AI companies putting agentic workloads into production, more domain-focused than model- or developer-focused.
 

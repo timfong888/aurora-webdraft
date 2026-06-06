@@ -30,6 +30,11 @@ positioning is anchored on **reserved inference GPUs**, not "fixed cost":
 - **Do not imply a time-slice constraint.** Aurora does **not** currently constrain by
   time slice, so avoid "rate-limiting keeps spend flat" and similar throttling language.
   Frame it as: spend tracks your reservation, not your per-request volume.
+- **Do not claim Aurora owns the GPUs, DC, or hardware.** Per Tim's direction on Issue
+  #3, drop explicit ownership claims ("Aurora owns the DC and GPUs", "owns the hardware",
+  "owned GPU capacity"). Anchor instead on **dedicated, reserved inference GPUs** — the
+  customer-facing frame is that Aurora *reserves* dedicated GPUs for you, not that it
+  owns them.
 - **ValueMaxxing™** is Aurora's named counter-discipline to *token maxing*: optimize
   cost toward value per token (and per reserved GPU), not token volume. Use it as the
   green/Aurora counterpart wherever the copy contrasts with "token maxing".
@@ -62,7 +67,7 @@ Agentic AI maxes tokens by default. Multi-step reasoning, tool loops, and agent 
 Features:
 - Reserve inference GPUs at a predictable monthly price [revised]
 - Spend tracks your reservation, not your per-request volume [revised]
-- Aurora owns the DC and GPUs — keeps cost predictable where routers can't [revised]
+- Dedicated reserved GPUs — keeps cost predictable where routers can't [revised]
 
 **Benefit:** Forecastable spend and protected margins even as agentic consumption explodes.
 **CTA:** "See Pricing"
@@ -84,7 +89,7 @@ Features:
 **Headline:** Built for production scale, not experiments.
 
 Features:
-- Owned GPU capacity — available now through the Blackwell crunch
+- Reserved GPU capacity — available now through the Blackwell crunch
 - Managed serving — zero infra ops burden
 - Latency control when others are booked out
 
@@ -107,7 +112,7 @@ Features:
 | Router-style services | Still per-token and variable | Optimization on top of reservation |
 | Raw GPU neocloud | You carry ops burden and self-optimize | Managed serving + routing built in |
 
-**Only Aurora line:** Owns the hardware → reserves inference GPUs at a predictable cost. Optimization on top of the reservation — ValueMaxxing™ → more throughput per reserved GPU. Capacity available now. [revised]
+**Only Aurora line:** Reserves dedicated inference GPUs at a predictable cost. Optimization on top of the reservation — ValueMaxxing™ → more throughput per reserved GPU. Capacity available now. [revised]
 
 ### CTA Strip (Section 9)
 

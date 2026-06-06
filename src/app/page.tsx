@@ -55,7 +55,7 @@ const PILLARS = [
     features: [
       "Reserve inference GPUs at a predictable monthly price",
       "Spend tracks your reservation, not your per-request volume",
-      "Aurora owns the DC and GPUs — keeps cost predictable where routers can't",
+      "Dedicated reserved GPUs — keeps cost predictable where routers can't",
     ],
     benefit: "Forecastable spend and protected margins even as agentic consumption explodes.",
     cta: { label: "See Pricing", href: "/pricing" },
@@ -77,7 +77,7 @@ const PILLARS = [
     label: "Production-Ready Capacity",
     headline: "Built for production scale, not experiments.",
     features: [
-      "Owned GPU capacity — available now through the Blackwell crunch",
+      "Reserved GPU capacity — available now through the Blackwell crunch",
       "Managed serving — zero infra ops burden",
       "Latency control when others are booked out",
     ],
