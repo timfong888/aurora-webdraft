@@ -1,6 +1,51 @@
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { SITE_URL, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION } from "@/lib/site";
+
+// ─── Structured data (JSON-LD) ─────────────────────────────────────────────────
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      url: SITE_URL,
+      slogan: SITE_TAGLINE,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: `${SITE_NAME} — ${SITE_TAGLINE}`,
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "Event",
+      name: "Beyond Token Maxing: The Path to Profitable AI",
+      description:
+        "An evening on the economics of agentic AI — for the engineers building it and the finance leaders funding it.",
+      startDate: "2026-06-30T18:00:00-07:00",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      eventStatus: "https://schema.org/EventScheduled",
+      url: `${SITE_URL}/contact`,
+      organizer: { "@id": `${SITE_URL}/#organization` },
+      location: {
+        "@type": "Place",
+        name: "Frontier Tower",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "San Francisco",
+          addressRegion: "CA",
+          addressCountry: "US",
+        },
+      },
+    },
+  ],
+};
 
 // ─── Pillars ─────────────────────────────────────────────────────────────────
 const PILLARS = [
@@ -46,6 +91,11 @@ const PILLARS = [
 export default function Home() {
   return (
     <div className="flex flex-col bg-slate-950 text-white">
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden px-6 pb-24 pt-20 sm:px-8 lg:px-12">

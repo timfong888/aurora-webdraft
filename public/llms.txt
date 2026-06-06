@@ -1,0 +1,25 @@
+# Aurora
+
+> Aurora is the Token Optimization Cloud: a reserved, predictable inference cloud for agentic AI workloads. Reserve capacity at a fixed monthly price and Aurora optimizes every token against that reservation — full agentic throughput at a fixed cost, instead of a per-token bill with no ceiling. Aurora owns its data centers and GPUs, so it can sell a fixed cost where per-token APIs and router-style services cannot.
+
+The core problem Aurora solves: agentic AI maxes tokens by default. Multi-step reasoning, tool loops, and agent fan-out consume tokens with no natural ceiling. Per-token prices are falling, but agentic consumption is rising faster — so total spend climbs for teams with real production workloads. Aurora's framing: token maxing is O(N); optimization is O(1).
+
+How it works (three pillars):
+- Predictable cost — reserve capacity at a fixed monthly price; rate-limiting inside the reservation keeps spend flat; Aurora owns the DC and GPUs, holding cost fixed where routers can't.
+- Token optimization — complexity-based multi-model routing inside your reservation; run fine-tuned open-source models (bring your LoRA); frontier models only where a request needs them.
+- Production-ready capacity — owned GPU capacity available now through the Blackwell crunch; managed serving with zero infra ops burden; latency control when others are booked out.
+
+Best-fit customer: mid-market AI companies putting agentic workloads into production, more domain-focused than model- or developer-focused.
+
+## Docs
+
+- [Home page](https://aurora-webdraft.vercel.app/): Full Aurora messaging — hero, problem, the O(N) vs O(1) proof, the three pillars, finance/ROI framing, and the comparison against per-token APIs, routers, and raw GPU neoclouds.
+- [Full site content (llms-full.txt)](https://aurora-webdraft.vercel.app/llms-full.txt): The complete page copy expanded as plain markdown for ingestion.
+
+## Contact
+
+- [Contact / Reserve capacity](https://aurora-webdraft.vercel.app/contact): Reserve inference capacity, talk to the team, or RSVP to the June 30, 2026 event at Frontier Tower, San Francisco.
+
+## Optional
+
+- [Event — Beyond Token Maxing: The Path to Profitable AI](https://aurora-webdraft.vercel.app/contact): An evening on the economics of agentic AI, June 30, 2026, Frontier Tower, San Francisco.
