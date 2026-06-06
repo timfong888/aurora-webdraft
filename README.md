@@ -20,6 +20,20 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Setup
+
+### Claude Agent Trigger secret
+
+The [`.github/workflows/claude-trigger.yml`](.github/workflows/claude-trigger.yml) workflow lets repo collaborators drive Claude Code from GitHub Issue comments (`@claude implement`, `@claude draft`, `@claude question`, `@claude review`). It requires an Anthropic API key:
+
+1. Go to **Settings → Secrets and variables → Actions → New repository secret**.
+2. Name the secret **`ANTHROPIC_API_KEY`**.
+3. Paste your Anthropic API key as the value and save.
+
+The workflow reads this secret as `ANTHROPIC_API_KEY` and validates that it is present before invoking Claude. `GITHUB_TOKEN` is provided automatically by GitHub Actions and is used for branch, PR, and comment creation — no manual setup needed.
+
+> Note: earlier drafts of Issue #18 referred to this secret as `CLAUDE_API_KEY`. The workflow and this documentation use **`ANTHROPIC_API_KEY`** — store the key under that name.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
