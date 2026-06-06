@@ -1,11 +1,51 @@
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { SITE_URL, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION } from "@/lib/site";
 
-// ─── Social Proof ────────────────────────────────────────────────────────────
-const LOGOS = [
-  "Actively", "Astrocade", "Nura", "Qualitate", "[ Your company ]",
-];
+// ─── Structured data (JSON-LD) ─────────────────────────────────────────────────
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      url: SITE_URL,
+      slogan: SITE_TAGLINE,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: `${SITE_NAME} — ${SITE_TAGLINE}`,
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "Event",
+      name: "Beyond Token Maxing: The Path to Profitable AI",
+      description:
+        "An evening on the economics of agentic AI — for the engineers building it and the finance leaders funding it.",
+      startDate: "2026-06-30T18:00:00-07:00",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      eventStatus: "https://schema.org/EventScheduled",
+      url: `${SITE_URL}/contact`,
+      organizer: { "@id": `${SITE_URL}/#organization` },
+      location: {
+        "@type": "Place",
+        name: "Frontier Tower",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "San Francisco",
+          addressRegion: "CA",
+          addressCountry: "US",
+        },
+      },
+    },
+  ],
+};
 
 // ─── Pillars ─────────────────────────────────────────────────────────────────
 const PILLARS = [
@@ -47,32 +87,15 @@ const PILLARS = [
   },
 ];
 
-// ─── Alternatives ─────────────────────────────────────────────────────────────
-const ALTERNATIVES = [
-  {
-    name: "Per-token APIs",
-    examples: "OpenAI, Anthropic",
-    limitation: "Bill scales with every agent request — success becomes a runaway cost",
-    aurora: "Fixed reserved cost regardless of token volume",
-  },
-  {
-    name: "Router-style services",
-    examples: "LiteLLM, OpenRouter",
-    limitation: "Still per-token and variable — optimize price, not volume",
-    aurora: "Optimization built into the serving layer on top of your reservation",
-  },
-  {
-    name: "Raw GPU neoclouds",
-    examples: "Lambda, Together, RunPod",
-    limitation: "You carry the ops burden and self-optimize routing",
-    aurora: "Managed serving + complexity routing built in",
-  },
-];
-
 // ─── Page ────────────────────────────────────────────────────────────────────
 export default function Home() {
   return (
     <div className="flex flex-col bg-slate-950 text-white">
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden px-6 pb-24 pt-20 sm:px-8 lg:px-12">
@@ -136,25 +159,6 @@ export default function Home() {
               </svg>
               <span className="text-xs font-semibold text-slate-300">Norway · Canada · Texas · New York</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Social Proof ──────────────────────────────────────────────────── */}
-      <section className="border-y border-white/10 bg-slate-900/50 px-6 py-8">
-        <div className="mx-auto max-w-5xl">
-          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-widest text-slate-500">
-            Trusted by AI teams putting agentic workloads into production
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {LOGOS.map((name) => (
-              <span
-                key={name}
-                className="text-sm font-semibold text-slate-400"
-              >
-                {name}
-              </span>
-            ))}
           </div>
         </div>
       </section>
@@ -305,8 +309,8 @@ export default function Home() {
               </p>
               <p className="mt-4 text-slate-300">
                 Aurora converts variable, uncapped COGS into a fixed reserved
-                cost — predictable gross margin, defensible unit economics, no
-                budget variance at board time.
+                cost — predictable gross margin, defensible unit economics, and
+                inference spend fixed against plan. {/* [revised] softened from "no budget variance at board time" — reserving capacity fixes the reservation cost, not total budget variance */}
               </p>
               <p className="mt-6 rounded-lg border border-violet-500/30 bg-violet-500/10 px-5 py-4 text-sm font-medium text-violet-200">
                 Optimization fixes the unit economics.
@@ -317,7 +321,7 @@ export default function Home() {
                 { metric: "Cost per request", desc: "Fixed, not variable" },
                 { metric: "Gross margin %", desc: "Protected as you scale" },
                 { metric: "$/customer", desc: "Predictable unit economics" },
-                { metric: "Budget variance", desc: "Zero — reserved in advance" },
+                { metric: "Budget variance", desc: "Fixed against plan" }, // [revised] softened from "Zero — reserved in advance" — reservation fixes cost, not literal zero variance
               ].map((item) => (
                 <div
                   key={item.metric}
@@ -329,50 +333,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── Why Aurora ────────────────────────────────────────────────────── */}
-      <section className="px-6 py-24 sm:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Why not just use what you already have?
-            </h2>
-          </div>
-          <div className="overflow-hidden rounded-xl border border-white/10">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-white/10 bg-slate-900">
-                  <th className="px-5 py-4 text-left font-semibold text-slate-300">Alternative</th>
-                  <th className="px-5 py-4 text-left font-semibold text-slate-300">The problem</th>
-                  <th className="px-5 py-4 text-left font-semibold text-emerald-400">Aurora</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ALTERNATIVES.map((row, i) => (
-                  <tr
-                    key={row.name}
-                    className={cn(
-                      "border-b border-white/10 last:border-0",
-                      i % 2 === 0 ? "bg-slate-950" : "bg-slate-900/50"
-                    )}
-                  >
-                    <td className="px-5 py-4">
-                      <p className="font-medium text-white">{row.name}</p>
-                      <p className="text-xs text-slate-500">{row.examples}</p>
-                    </td>
-                    <td className="px-5 py-4 text-slate-400">{row.limitation}</td>
-                    <td className="px-5 py-4 text-slate-200">{row.aurora}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-6 text-center text-sm text-slate-400">
-            Only Aurora owns the hardware — so only Aurora can sell a fixed cost.
-            Routers and resellers can&apos;t escape per-token billing.
-          </p>
         </div>
       </section>
 

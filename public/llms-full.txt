@@ -1,0 +1,82 @@
+# Aurora — The Token Optimization Cloud
+
+> Reserved, predictable inference cloud for agentic AI workloads. Reserve your capacity and Aurora optimizes every token against it — full agentic throughput at a fixed, predictable cost, instead of a per-token bill with no ceiling.
+
+## Hero
+
+Headline: Per-token pricing hands every agent an unlimited credit card.
+
+Subheader: Reserve your capacity and Aurora optimizes every token against it — full agentic throughput at a fixed, predictable cost, instead of a per-token bill with no ceiling.
+
+Primary actions: Reserve Capacity · Talk to Us.
+
+## The problem
+
+Agentic AI maxes tokens by default. Multi-step reasoning, tool loops, and agent fan-out consume tokens with no natural ceiling. Per-token prices are falling, but agentic consumption is rising faster — so total spend climbs for customers with real production workloads.
+
+Callout: Cheaper tokens don't save you when you consume them faster than they get cheap.
+
+## The math (proof)
+
+max(tokens) has no upper bound. Your budget does.
+
+Token maxing is O(N). Optimization is O(1).
+
+Under per-token pricing, every new agent capability, every longer reasoning chain, every fan-out adds directly to your bill. Aurora decouples capability from cost.
+
+## Pillar 1 — Predictable cost
+
+Headline: A fixed monthly cost, not a bill that grows with every request.
+
+- Reserve capacity at a fixed monthly price.
+- Rate-limiting inside the reservation keeps spend flat.
+- Aurora owns the DC and GPUs — holds cost fixed where routers can't.
+
+Benefit: Forecastable spend and protected margins even as agentic consumption explodes.
+
+## Pillar 2 — Token optimization
+
+Headline: More useful work per GPU.
+
+- Complexity-based multi-model routing inside your reservation.
+- Run fine-tuned open-source models — bring your LoRA.
+- Frontier models only where a request needs them.
+
+Benefit: Lower effective cost per useful token; the right model for each step of an agent loop; no manual tuning.
+
+## Pillar 3 — Production-ready capacity
+
+Headline: Built for production scale, not experiments.
+
+- Owned GPU capacity — available now through the Blackwell crunch.
+- Managed serving — zero infra ops burden.
+- Latency control when others are booked out.
+
+## Finance / ROI
+
+Token maxing isn't a budget overrun — it's a broken cost structure.
+
+- Pain: AI inference is becoming your largest variable COGS (cost of goods sold) line — gross margin erodes exactly as you scale.
+- Value: Convert variable, uncapped COGS into a fixed reserved cost → predictable gross margin, defensible unit economics.
+- CFO one-liner: Optimization fixes the unit economics.
+- Metrics to track: cost per request · gross margin % · $/customer · budget variance vs. plan.
+
+## Why Aurora vs. alternatives
+
+- Per-token APIs (e.g. OpenAI, Anthropic): the bill scales with every request. Aurora advantage: fixed reserved cost.
+- Router-style services: still per-token and variable. Aurora advantage: optimization on top of the reservation.
+- Raw GPU neoclouds: you carry the ops burden and self-optimize. Aurora advantage: managed serving + routing built in.
+
+Only Aurora owns the hardware → it can sell a fixed cost. Optimization on top of the reservation → more throughput per reserved GPU. Capacity available now.
+
+## Event
+
+Beyond Token Maxing: The Path to Profitable AI — an evening on the economics of agentic AI. June 30, 2026, Frontier Tower, San Francisco.
+
+## Market category
+
+Entry frame: reserved, predictable inference cloud for agentic workloads. Vision: the Token Optimization Cloud.
+
+## Best-fit customer
+
+Mid-market AI companies putting agentic workloads into production; raised money at scaling tier; more domain-focused than model- or developer-focused.
