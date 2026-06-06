@@ -86,8 +86,8 @@ export default function Home() {
             The Token Optimization Cloud
           </p>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Per-token pricing hands every agent{" "}
-            <span className="text-violet-400">an unlimited credit card.</span>
+            Control your AI spend with{" "}
+            <span className="text-violet-400">higher value per token.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             Reserve your capacity and Aurora optimizes every token against it —
