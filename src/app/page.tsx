@@ -114,8 +114,9 @@ export default function Home() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             Aurora delivers full-stack value maxing — from the GPU and energy
-            layer through agentic memory and model routing — extracting maximum
-            intelligence per dollar at a fixed, predictable cost.
+            layer through agentic memory and model routing — providing finance,
+            engineering and product leaders with higher predictability of AI
+            spend.
           </p>
           <div className="mt-6 flex justify-center">
             <div className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2 text-sm font-medium text-emerald-300">
