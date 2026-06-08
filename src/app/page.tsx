@@ -75,7 +75,7 @@ export default function Home() {
     <div className="flex flex-col bg-slate-950 text-white">
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden px-6 pb-24 pt-20 sm:px-8 lg:px-12">
+      <section className="relative overflow-hidden px-6 pb-32 pt-28 sm:px-8 lg:px-12">
         {/* Background glow */}
         <div
           aria-hidden="true"
@@ -90,11 +90,16 @@ export default function Home() {
             <span className="text-violet-400">an unlimited credit card.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Reserve your capacity and Aurora optimizes every token against it —
-            full agentic throughput at a fixed, predictable cost, instead of a
-            per-token bill with no ceiling.
+            Aurora delivers full-stack value maxing — from the GPU and energy
+            layer through agentic memory and model routing — extracting maximum
+            intelligence per dollar at a fixed, predictable cost.
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-6 flex justify-center">
+            <div className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2 text-sm font-medium text-emerald-300">
+              Typically 20% lower than your current invoice or quote
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
               className={cn(
@@ -233,7 +238,7 @@ export default function Home() {
                 <line x1="40" y1="100" x2="280" y2="100" stroke="#10b981" strokeWidth="2.5" />
                 {/* Labels */}
                 <text x="170" y="28" fontSize="9" fill="#ef4444" fontWeight="bold">Token Maxing — O(N)</text>
-                <text x="170" y="95" fontSize="9" fill="#10b981" fontWeight="bold">Aurora reserved — O(1)</text>
+                <text x="170" y="95" fontSize="9" fill="#10b981" fontWeight="bold">Aurora Reserved Resource</text>
                 {/* Dots */}
                 <circle cx="280" cy="20" r="3" fill="#ef4444" />
                 <circle cx="280" cy="100" r="3" fill="#10b981" />
@@ -417,7 +422,7 @@ export default function Home() {
       </section>
 
       {/* ── Footer ────────────────────────────────────────────────────────── */}
-      <footer className="border-t border-white/10 px-6 py-12 sm:px-8">
+      <footer className="hidden border-t border-white/10 px-6 py-12 sm:px-8">
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             <div>
