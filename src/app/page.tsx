@@ -108,19 +108,19 @@ export default function Home() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-violet-400">
             The Token Optimization Cloud
           </p>
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Control your AI spend with{" "}
-            <span className="text-violet-400">higher value per token.</span>
+          <h1 className="text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Inference you need{" "}
+            <span className="text-violet-400">at a cost you control.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Aurora delivers full-stack value maxing — from the GPU and energy
+            Aurora delivers full-stack ValueMaxxing (TM) — from the GPU and energy
             layer through agentic memory and model routing — providing finance,
             engineering and product leaders with higher predictability of AI
             spend.
           </p>
           <div className="mt-6 flex justify-center">
             <div className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2 text-sm font-medium text-emerald-300">
-              Typically 20% lower than your current invoice or quote
+              Try our 17% challenge: send us your inference invoice and we&apos;ll show you how we&apos;d save you 17% or more.
             </div>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -199,14 +199,10 @@ export default function Home() {
                 The math
               </p>
               <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl">
-                max(tokens) has no upper bound.
+                Raw token usage has no upper bound.
                 <br />
                 Your budget does.
               </h2>
-              <p className="mt-4 text-slate-300">
-                Token maxing is <span className="font-mono font-bold text-red-400">O(N)</span>.
-                Optimization is <span className="font-mono font-bold text-emerald-400">O(1)</span>.
-              </p>
               <p className="mt-3 text-sm text-slate-400">
                 Under per-token pricing, every new agent capability, every
                 longer reasoning chain, every fan-out adds directly to your
@@ -302,24 +298,17 @@ export default function Home() {
         <div className="mx-auto max-w-4xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-violet-400">
-                For Finance
-              </p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Token maxing isn&apos;t a budget overrun — it&apos;s a broken cost structure.
               </h2>
               <p className="mt-5 text-slate-300">
                 AI inference is becoming your largest variable COGS line. Gross
-                margin erodes exactly as you scale. Per-token billing hands
-                every capability improvement directly to your cloud provider.
+                margin erodes as autonomy and intelligence scales.
               </p>
               <p className="mt-4 text-slate-300">
-                Aurora converts variable, uncapped COGS into a fixed reserved
-                cost — predictable gross margin, defensible unit economics, and
-                inference spend fixed against plan. {/* [revised] softened from "no budget variance at board time" — reserving capacity fixes the reservation cost, not total budget variance */}
-              </p>
-              <p className="mt-6 rounded-lg border border-violet-500/30 bg-violet-500/10 px-5 py-4 text-sm font-medium text-violet-200">
-                Optimization fixes the unit economics.
+                Aurora optimizes costs and gives engineers, finance, and product
+                teams more value for their spend through an optimization stack,
+                from GPU and DC to the orchestration and memory layer.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -327,7 +316,7 @@ export default function Home() {
                 { metric: "Cost per request", desc: "Fixed, not variable" },
                 { metric: "Gross margin %", desc: "Protected as you scale" },
                 { metric: "$/customer", desc: "Predictable unit economics" },
-                { metric: "Budget variance", desc: "Fixed against plan" }, // [revised] softened from "Zero — reserved in advance" — reservation fixes cost, not literal zero variance
+                { metric: "Budget variance", desc: "Tuned to workloads" },
               ].map((item) => (
                 <div
                   key={item.metric}
