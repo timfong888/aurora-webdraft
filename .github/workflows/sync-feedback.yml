@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: git push origin main:feedback
+      - run: git push origin main:feedback --force
