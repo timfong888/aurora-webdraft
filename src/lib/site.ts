@@ -9,6 +9,6 @@ export const SITE_URL = (
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Aurora";
-export const SITE_TAGLINE = "The Token Optimization Cloud";
+export const SITE_TAGLINE = "Full-Stack AI Infrastructure";
 export const SITE_DESCRIPTION =
-  "Reserve your inference capacity and Aurora optimizes every token against it — full agentic throughput at a fixed, predictable cost, instead of a per-token bill with no ceiling.";
+  "GPU clusters, AI inference, agents, storage, and edge — built, deployed, and operated by Aurora as a fully managed service.";
