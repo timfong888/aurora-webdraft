@@ -254,7 +254,7 @@ export default function Home() {
               <div className="cost-blade">
                 <div>
                   <div className="eyebrow">Cost Optimization</div>
-                  <h2>Agentic AI maxes tokens by default.</h2>
+                  <h2>ValueMaxxing throughout the stack.</h2>
                   <p>Per-token prices fall — but agentic consumption rises faster. Multi-step reasoning, tool loops, and agent fan-out have no natural ceiling. Total inference spend climbs regardless.</p>
                   <p>Aurora decouples capability from cost: reserve capacity, run every token through an optimization layer, and stay inside the budget.</p>
                 </div>
