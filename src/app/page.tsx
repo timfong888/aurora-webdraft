@@ -256,7 +256,7 @@ export default function Home() {
                   <div className="eyebrow">Cost Optimization</div>
                   <h2>Agentic AI maxes tokens by default.</h2>
                   <p>Per-token prices fall — but agentic consumption rises faster. Multi-step reasoning, tool loops, and agent fan-out have no natural ceiling. Total inference spend climbs regardless.</p>
-                  <p>Aurora decouples capability from cost: reserve capacity at a fixed price, run every token through an optimization layer, and stay inside the budget.</p>
+                  <p>Aurora decouples capability from cost: reserve capacity, run every token through an optimization layer, and stay inside the budget.</p>
                 </div>
                 <div>
                   <div className="cost-compare">
@@ -267,7 +267,7 @@ export default function Home() {
                     <div className="cost-vs">vs</div>
                     <div className="cost-item cost-good">
                       <div className="cost-lbl">Aurora Reserved</div>
-                      <div className="cost-sub">Fixed capacity at a monthly price. Optimization runs inside the reservation — more throughput, not a larger invoice.</div>
+                      <div className="cost-sub">Reserved capacity at a monthly price. Optimization runs inside the reservation — more throughput, not a larger invoice.</div>
                     </div>
                   </div>
                 </div>
