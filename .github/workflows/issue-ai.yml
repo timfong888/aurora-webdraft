@@ -1,0 +1,20 @@
+name: Aurora AI Issue Agent
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - uses: alexyan0431/issue-ai-agent@v1
+        with:
+          openai-api-key: ${{ secrets.AURORA_API_KEY }}
+          llm-provider: openai
+          llm-base-url: https://ai.aur.lu/v1
