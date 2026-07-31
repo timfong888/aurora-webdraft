@@ -1,0 +1,4 @@
+llm:
+  provider: openai
+  model: deepseek/deepseek-v4-flash
+  max_tokens: 2048
