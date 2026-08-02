@@ -1,0 +1,410 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 900" width="430" height="900">
+  <defs>
+    <!-- Warm palette gradients -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAF7F4"/>
+      <stop offset="100%" stop-color="#F5F0EB"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FDFCFB"/>
+    </linearGradient>
+    <linearGradient id="btnGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C67B4E"/>
+      <stop offset="100%" stop-color="#D4915F"/>
+    </linearGradient>
+    <linearGradient id="summaryGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3D2E22"/>
+      <stop offset="100%" stop-color="#2A1F17"/>
+    </linearGradient>
+    <linearGradient id="roomFloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8A882"/>
+      <stop offset="100%" stop-color="#B89B72"/>
+    </linearGradient>
+    <linearGradient id="roomWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8DDD0"/>
+      <stop offset="100%" stop-color="#DED0BF"/>
+    </linearGradient>
+    <linearGradient id="windowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B8D4E8"/>
+      <stop offset="100%" stop-color="#A0C4DC"/>
+    </linearGradient>
+    <linearGradient id="pinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C67B4E"/>
+      <stop offset="100%" stop-color="#A8623A"/>
+    </linearGradient>
+    <linearGradient id="pinActiveGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8944F"/>
+      <stop offset="100%" stop-color="#C67B4E"/>
+    </linearGradient>
+    <linearGradient id="viewBtnGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C67B4E"/>
+      <stop offset="100%" stop-color="#D4915F"/>
+    </linearGradient>
+
+    <!-- Shadows -->
+    <filter id="cardShadow" x="-5%" y="-5%" width="115%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000012"/>
+    </filter>
+    <filter id="pinShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#00000025"/>
+    </filter>
+    <filter id="popupShadow" x="-8%" y="-8%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#00000020"/>
+    </filter>
+    <filter id="headerShadow" x="0" y="0" width="100%" height="150%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#00000008"/>
+    </filter>
+    <filter id="summaryShadow" x="0" y="-20%" width="100%" height="130%">
+      <feDropShadow dx="0" dy="-3" stdDeviation="6" flood-color="#00000015"/>
+    </filter>
+
+    <!-- Phone frame clip -->
+    <clipPath id="screenClip">
+      <rect x="20" y="18" width="390" height="844" rx="42"/>
+    </clipPath>
+
+    <!-- Star rating symbol -->
+    <symbol id="star" viewBox="0 0 12 12">
+      <path d="M6 0.5l1.76 3.57 3.94.57-2.85 2.78.67 3.93L6 9.5l-3.52 1.85.67-3.93L.3 4.64l3.94-.57z"/>
+    </symbol>
+    <symbol id="halfStar" viewBox="0 0 12 12">
+      <defs>
+        <clipPath id="halfClip">
+          <rect x="0" y="0" width="6" height="12"/>
+        </clipPath>
+      </defs>
+      <path d="M6 0.5l1.76 3.57 3.94.57-2.85 2.78.67 3.93L6 9.5l-3.52 1.85.67-3.93L.3 4.64l3.94-.57z" fill="#D4D0CC"/>
+      <path d="M6 0.5l1.76 3.57 3.94.57-2.85 2.78.67 3.93L6 9.5l-3.52 1.85.67-3.93L.3 4.64l3.94-.57z" fill="#E8A84C" clip-path="url(#halfClip)"/>
+    </symbol>
+  </defs>
+
+  <!-- Phone outer body -->
+  <rect x="14" y="12" width="402" height="856" rx="48" fill="#1A1A1A"/>
+  <rect x="17" y="15" width="396" height="850" rx="45" fill="#2C2C2E"/>
+  <rect x="20" y="18" width="390" height="844" rx="42" fill="url(#bgGrad)"/>
+
+  <!-- Clipped screen content -->
+  <g clip-path="url(#screenClip)">
+
+    <!-- ==================== STATUS BAR ==================== -->
+    <rect x="20" y="18" width="390" height="50" fill="#FFFFFF"/>
+    <!-- Time -->
+    <text x="52" y="43" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="600" fill="#1C1C1E">9:41</text>
+    <!-- Dynamic Island -->
+    <rect x="155" y="24" width="120" height="28" rx="14" fill="#1C1C1E"/>
+    <!-- Signal bars -->
+    <g transform="translate(330, 30)">
+      <rect x="0" y="8" width="3" height="5" rx="0.5" fill="#1C1C1E"/>
+      <rect x="5" y="5" width="3" height="8" rx="0.5" fill="#1C1C1E"/>
+      <rect x="10" y="2" width="3" height="11" rx="0.5" fill="#1C1C1E"/>
+      <rect x="15" y="0" width="3" height="13" rx="0.5" fill="#1C1C1E"/>
+    </g>
+    <!-- WiFi -->
+    <g transform="translate(353, 30)">
+      <path d="M4 10.5a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0" fill="#1C1C1E"/>
+      <path d="M2 7.5c2-2 5-2 7 0" stroke="#1C1C1E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <path d="M-0.5 4.5c3.5-3 8-3 12 0" stroke="#1C1C1E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- Battery -->
+    <g transform="translate(376, 31)">
+      <rect x="0" y="0" width="24" height="11" rx="2" stroke="#1C1C1E" stroke-width="1" fill="none"/>
+      <rect x="24.5" y="3" width="1.5" height="5" rx="0.5" fill="#1C1C1E"/>
+      <rect x="1.5" y="1.5" width="20" height="8" rx="1" fill="#34C759"/>
+    </g>
+
+    <!-- ==================== HEADER BAR ==================== -->
+    <rect x="20" y="68" width="390" height="52" fill="url(#headerGrad)" filter="url(#headerShadow)"/>
+    <!-- Back arrow -->
+    <g transform="translate(38, 86)">
+      <path d="M12 0L0 9L12 18" stroke="#C67B4E" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Title -->
+    <text x="215" y="100" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#2A1F17" text-anchor="middle">Suggested Products</text>
+    <!-- Filter icon -->
+    <g transform="translate(371, 82)">
+      <line x1="0" y1="4" x2="20" y2="4" stroke="#C67B4E" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="3" y1="10" x2="17" y2="10" stroke="#C67B4E" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="7" y1="16" x2="13" y2="16" stroke="#C67B4E" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+
+    <!-- ==================== ROOM COMPOSITE IMAGE ==================== -->
+    <rect x="20" y="120" width="390" height="240" fill="#DED0BF"/>
+    <!-- Wall -->
+    <rect x="20" y="120" width="390" height="160" fill="url(#roomWall)"/>
+    <!-- Floor -->
+    <rect x="20" y="280" width="390" height="80" fill="url(#roomFloor)"/>
+    <!-- Baseboard line -->
+    <line x1="20" y1="280" x2="410" y2="280" stroke="#B89B72" stroke-width="1"/>
+
+    <!-- Window -->
+    <rect x="150" y="135" width="90" height="105" rx="2" fill="url(#windowGrad)" stroke="#C8B8A4" stroke-width="2"/>
+    <line x1="195" y1="135" x2="195" y2="240" stroke="#C8B8A4" stroke-width="1.5"/>
+    <line x1="150" y1="187" x2="240" y2="187" stroke="#C8B8A4" stroke-width="1.5"/>
+    <!-- Window curtains -->
+    <rect x="140" y="130" width="15" height="115" rx="2" fill="#D4C4B0" opacity="0.7"/>
+    <rect x="235" y="130" width="15" height="115" rx="2" fill="#D4C4B0" opacity="0.7"/>
+
+    <!-- Sofa (large warm rectangle) -->
+    <rect x="60" y="250" width="170" height="70" rx="8" fill="#8B6F5C"/>
+    <rect x="60" y="246" width="170" height="30" rx="6" fill="#9B7F6C"/>
+    <!-- Sofa cushions -->
+    <rect x="65" y="250" width="52" height="26" rx="5" fill="#A08874"/>
+    <rect x="120" y="250" width="52" height="26" rx="5" fill="#A08874"/>
+    <rect x="175" y="250" width="52" height="26" rx="5" fill="#A08874"/>
+    <!-- Sofa back -->
+    <rect x="55" y="230" width="180" height="20" rx="6" fill="#7A6050"/>
+    <!-- Sofa arm left -->
+    <rect x="50" y="232" width="18" height="85" rx="6" fill="#8B6F5C"/>
+    <!-- Sofa arm right -->
+    <rect x="225" y="232" width="18" height="85" rx="6" fill="#8B6F5C"/>
+
+    <!-- Ottoman (product 1) -->
+    <rect x="260" y="300" width="65" height="40" rx="6" fill="#7B9BAF"/>
+    <rect x="258" y="296" width="69" height="10" rx="4" fill="#8DAEC0"/>
+
+    <!-- Floor lamp (product 2) -->
+    <rect x="310" y="310" width="4" height="80" rx="1" fill="#2C2C2E"/>
+    <ellipse cx="312" cy="310" rx="14" ry="8" fill="#F5E6C8" opacity="0.9"/>
+    <path d="M298 310 Q312 295 326 310" fill="#E8D5B4" stroke="#D4C4A0" stroke-width="0.5"/>
+    <rect x="308" y="388" width="8" height="3" rx="1.5" fill="#3C3C3E"/>
+    <!-- Lamp glow -->
+    <ellipse cx="312" cy="320" rx="20" ry="14" fill="#FFF5E0" opacity="0.2"/>
+
+    <!-- Wall shelving unit (product 3) -->
+    <g transform="translate(290, 140)">
+      <!-- Shelf brackets -->
+      <rect x="0" y="0" width="90" height="3" rx="1" fill="#6B5B4E"/>
+      <rect x="0" y="30" width="90" height="3" rx="1" fill="#6B5B4E"/>
+      <rect x="0" y="60" width="90" height="3" rx="1" fill="#6B5B4E"/>
+      <!-- Vertical supports -->
+      <rect x="0" y="0" width="3" height="63" fill="#7A6A5C"/>
+      <rect x="87" y="0" width="3" height="63" fill="#7A6A5C"/>
+      <!-- Items on shelves -->
+      <rect x="8" y="8" width="15" height="22" rx="1" fill="#98B4A0"/>
+      <rect x="28" y="14" width="12" height="16" rx="1" fill="#C4A882"/>
+      <circle cx="60" cy="20" r="7" fill="#D4A0A0"/>
+      <rect x="72" y="10" width="10" height="20" rx="1" fill="#A8C0D4"/>
+      <rect x="10" y="38" width="25" height="20" rx="1" fill="#B4A498"/>
+      <circle cx="55" cy="48" r="6" fill="#C8B898"/>
+      <rect x="68" y="40" width="14" height="18" rx="1" fill="#A0B8A4"/>
+    </g>
+
+    <!-- Rug -->
+    <ellipse cx="170" cy="340" rx="100" ry="18" fill="#C4A87C" opacity="0.5"/>
+
+    <!-- Plant in corner -->
+    <rect x="38" y="318" width="14" height="18" rx="2" fill="#B4946C"/>
+    <circle cx="45" cy="310" r="12" fill="#6B9B6B"/>
+    <circle cx="38" cy="305" r="8" fill="#7BAB7B"/>
+    <circle cx="52" cy="307" r="7" fill="#5B8B5B"/>
+
+    <!-- "After" badge -->
+    <rect x="32" y="130" width="52" height="22" rx="11" fill="#C67B4E"/>
+    <text x="58" y="145" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">After</text>
+
+    <!-- ==================== PIN MARKERS ==================== -->
+    <!-- Pin 1 - on ottoman -->
+    <g filter="url(#pinShadow)">
+      <circle cx="292" cy="310" r="13" fill="url(#pinGrad)"/>
+      <circle cx="292" cy="310" r="11" fill="url(#pinGrad)" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="292" y="315" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+    </g>
+
+    <!-- Pin 2 - on floor lamp (ACTIVE) -->
+    <g filter="url(#pinShadow)">
+      <circle cx="312" cy="350" r="15" fill="url(#pinActiveGrad)"/>
+      <circle cx="312" cy="350" r="13" fill="url(#pinActiveGrad)" stroke="#FFFFFF" stroke-width="2.5"/>
+      <text x="312" y="355" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+      <!-- Active ring pulse -->
+      <circle cx="312" cy="350" r="18" fill="none" stroke="#E8944F" stroke-width="1.5" opacity="0.4"/>
+    </g>
+
+    <!-- Pin 3 - on shelving unit -->
+    <g filter="url(#pinShadow)">
+      <circle cx="335" cy="175" r="13" fill="url(#pinGrad)"/>
+      <circle cx="335" cy="175" r="11" fill="url(#pinGrad)" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="335" y="180" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+    </g>
+
+    <!-- Pin 4 - on sofa throw pillow area -->
+    <g filter="url(#pinShadow)">
+      <circle cx="130" cy="260" r="13" fill="url(#pinGrad)"/>
+      <circle cx="130" cy="260" r="11" fill="url(#pinGrad)" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="130" y="265" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+    </g>
+
+    <!-- ==================== PIN 2 POPUP / CALLOUT ==================== -->
+    <g filter="url(#popupShadow)">
+      <!-- Popup card body -->
+      <rect x="140" y="337" width="160" height="68" rx="12" fill="#FFFFFF"/>
+      <!-- Pointer triangle pointing right toward pin -->
+      <polygon points="300,362 312,350 300,374" fill="#FFFFFF"/>
+      <!-- Product image placeholder -->
+      <rect x="148" y="345" width="50" height="50" rx="8" fill="#F0E8DC"/>
+      <!-- Lamp icon in placeholder -->
+      <rect x="168" y="358" width="3" height="28" rx="1" fill="#C4A882"/>
+      <path d="M159 358 Q171 348 183 358" fill="#E8D5B4" stroke="#D4C4A0" stroke-width="0.5"/>
+      <!-- Product info -->
+      <text x="205" y="357" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="600" fill="#2A1F17">Adjustable Floor Lamp</text>
+      <text x="205" y="370" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" fill="#C67B4E">$79.00</text>
+      <!-- Retailer -->
+      <text x="205" y="383" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" fill="#8E8E93">IKEA</text>
+      <!-- Mini view button -->
+      <rect x="247" y="377" width="44" height="20" rx="10" fill="url(#viewBtnGrad)"/>
+      <text x="269" y="390" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="600" fill="#FFFFFF" text-anchor="middle">View</text>
+    </g>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <rect x="20" y="360" width="390" height="44" fill="#FAF7F4"/>
+    <text x="40" y="387" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" fill="#2A1F17">Recommended Products</text>
+    <text x="382" y="387" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#C67B4E" text-anchor="end">3 items</text>
+
+    <!-- ==================== PRODUCT CARD 1 ==================== -->
+    <g filter="url(#cardShadow)">
+      <rect x="32" y="410" width="366" height="118" rx="14" fill="#FFFFFF"/>
+      <!-- Product image placeholder -->
+      <rect x="42" y="420" width="88" height="98" rx="10" fill="#F0E8DC"/>
+      <!-- Ottoman shape in placeholder -->
+      <rect x="58" y="455" width="56" height="34" rx="6" fill="#7B9BAF"/>
+      <rect x="56" y="450" width="60" height="10" rx="4" fill="#8DAEC0"/>
+      <!-- Pin badge -->
+      <circle cx="122" cy="427" r="10" fill="url(#pinGrad)"/>
+      <text x="122" y="431" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+
+      <!-- Product info -->
+      <text x="142" y="437" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" fill="#2A1F17">Modern Storage Ottoman</text>
+      <!-- Retailer tag -->
+      <rect x="142" y="443" width="50" height="17" rx="4" fill="#F0E8DC"/>
+      <text x="167" y="455" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#8B6F5C" text-anchor="middle">Wayfair</text>
+      <!-- Star rating 4.5 -->
+      <g transform="translate(142, 466)">
+        <use href="#star" x="0" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="14" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="28" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="42" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#halfStar" x="56" y="0" width="12" height="12"/>
+        <text x="74" y="10" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#8E8E93">4.5</text>
+      </g>
+      <!-- Price -->
+      <text x="142" y="500" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="700" fill="#C67B4E">$89.99</text>
+      <!-- See in room link -->
+      <text x="142" y="516" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#8B6F5C" text-decoration="underline" opacity="0.8">See in room</text>
+      <!-- Eye icon before text -->
+      <circle cx="137" cy="513" r="3" fill="none" stroke="#8B6F5C" stroke-width="0.8" opacity="0.8"/>
+
+      <!-- View button -->
+      <rect x="320" y="478" width="68" height="34" rx="17" fill="url(#viewBtnGrad)"/>
+      <text x="354" y="500" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">View</text>
+    </g>
+
+    <!-- ==================== PRODUCT CARD 2 ==================== -->
+    <g filter="url(#cardShadow)">
+      <rect x="32" y="538" width="366" height="118" rx="14" fill="#FFFFFF"/>
+      <!-- Active highlight border (this is the pin 2 item) -->
+      <rect x="32" y="538" width="366" height="118" rx="14" fill="none" stroke="#E8944F" stroke-width="2" stroke-dasharray="0"/>
+      <!-- Product image placeholder -->
+      <rect x="42" y="548" width="88" height="98" rx="10" fill="#F0E8DC"/>
+      <!-- Lamp shape in placeholder -->
+      <rect x="75" y="573" width="3.5" height="40" rx="1" fill="#2C2C2E"/>
+      <path d="M63 573 Q77 558 91 573" fill="#E8D5B4" stroke="#D4C4A0" stroke-width="0.5"/>
+      <ellipse cx="77" cy="573" rx="12" ry="7" fill="#F5E6C8" opacity="0.8"/>
+      <rect x="73" y="612" width="8" height="3" rx="1.5" fill="#3C3C3E"/>
+      <!-- Pin badge -->
+      <circle cx="122" cy="555" r="10" fill="url(#pinActiveGrad)"/>
+      <text x="122" y="559" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+
+      <!-- Product info -->
+      <text x="142" y="565" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" fill="#2A1F17">Adjustable Floor Lamp</text>
+      <!-- Retailer tag -->
+      <rect x="142" y="571" width="36" height="17" rx="4" fill="#F0E8DC"/>
+      <text x="160" y="583" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#8B6F5C" text-anchor="middle">IKEA</text>
+      <!-- Star rating 4.0 -->
+      <g transform="translate(142, 594)">
+        <use href="#star" x="0" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="14" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="28" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="42" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="56" y="0" width="12" height="12" fill="#D4D0CC"/>
+        <text x="74" y="10" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#8E8E93">4.0</text>
+      </g>
+      <!-- Price -->
+      <text x="142" y="628" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="700" fill="#C67B4E">$79.00</text>
+      <!-- See in room link -->
+      <text x="142" y="644" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#8B6F5C" text-decoration="underline" opacity="0.8">See in room</text>
+
+      <!-- View button -->
+      <rect x="320" y="606" width="68" height="34" rx="17" fill="url(#viewBtnGrad)"/>
+      <text x="354" y="628" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">View</text>
+    </g>
+
+    <!-- ==================== PRODUCT CARD 3 ==================== -->
+    <g filter="url(#cardShadow)">
+      <rect x="32" y="666" width="366" height="118" rx="14" fill="#FFFFFF"/>
+      <!-- Product image placeholder -->
+      <rect x="42" y="676" width="88" height="98" rx="10" fill="#F0E8DC"/>
+      <!-- Shelf shape in placeholder -->
+      <g transform="translate(52, 692)">
+        <rect x="0" y="0" width="68" height="3" rx="1" fill="#6B5B4E"/>
+        <rect x="0" y="22" width="68" height="3" rx="1" fill="#6B5B4E"/>
+        <rect x="0" y="44" width="68" height="3" rx="1" fill="#6B5B4E"/>
+        <rect x="0" y="0" width="2.5" height="47" fill="#7A6A5C"/>
+        <rect x="65.5" y="0" width="2.5" height="47" fill="#7A6A5C"/>
+        <!-- Items -->
+        <rect x="6" y="6" width="12" height="16" rx="1" fill="#98B4A0"/>
+        <circle cx="35" cy="14" r="5" fill="#D4A0A0"/>
+        <rect x="48" y="8" width="10" height="14" rx="1" fill="#A8C0D4"/>
+        <rect x="8" y="28" width="18" height="14" rx="1" fill="#B4A498"/>
+        <circle cx="45" cy="35" r="4" fill="#C8B898"/>
+      </g>
+      <!-- Pin badge -->
+      <circle cx="122" cy="683" r="10" fill="url(#pinGrad)"/>
+      <text x="122" y="687" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+
+      <!-- Product info -->
+      <text x="142" y="693" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" fill="#2A1F17">Wall-Mounted Shelving</text>
+      <!-- Retailer tag -->
+      <rect x="142" y="699" width="44" height="17" rx="4" fill="#F0E8DC"/>
+      <text x="164" y="711" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#8B6F5C" text-anchor="middle">Target</text>
+      <!-- Star rating 5.0 -->
+      <g transform="translate(142, 722)">
+        <use href="#star" x="0" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="14" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="28" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="42" y="0" width="12" height="12" fill="#E8A84C"/>
+        <use href="#star" x="56" y="0" width="12" height="12" fill="#E8A84C"/>
+        <text x="74" y="10" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#8E8E93">5.0</text>
+      </g>
+      <!-- Price -->
+      <text x="142" y="756" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="700" fill="#C67B4E">$149.99</text>
+      <!-- See in room link -->
+      <text x="142" y="772" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#8B6F5C" text-decoration="underline" opacity="0.8">See in room</text>
+
+      <!-- View button -->
+      <rect x="320" y="734" width="68" height="34" rx="17" fill="url(#viewBtnGrad)"/>
+      <text x="354" y="756" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">View</text>
+    </g>
+
+    <!-- ==================== BOTTOM SUMMARY BAR ==================== -->
+    <rect x="20" y="794" width="390" height="80" fill="url(#summaryGrad)" filter="url(#summaryShadow)"/>
+    <!-- Total text -->
+    <text x="40" y="822" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="11" fill="#A89B8C">Total estimated</text>
+    <text x="40" y="845" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">$318.98</text>
+    <!-- View All Products button -->
+    <rect x="220" y="814" width="170" height="42" rx="21" fill="url(#btnGrad)"/>
+    <text x="305" y="840" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">View All Products</text>
+
+    <!-- iOS home indicator -->
+    <rect x="167" y="856" width="96" height="5" rx="2.5" fill="#FFFFFF" opacity="0.3"/>
+
+  </g>
+
+  <!-- ==================== PHONE FRAME HIGHLIGHTS ==================== -->
+  <!-- Side button right -->
+  <rect x="416" y="180" width="3" height="35" rx="1.5" fill="#2C2C2E"/>
+  <!-- Side buttons left -->
+  <rect x="11" y="160" width="3" height="28" rx="1.5" fill="#2C2C2E"/>
+  <rect x="11" y="210" width="3" height="50" rx="1.5" fill="#2C2C2E"/>
+  <rect x="11" y="270" width="3" height="50" rx="1.5" fill="#2C2C2E"/>
+
+</svg>

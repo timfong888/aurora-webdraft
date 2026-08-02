@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <defs>
+    <!-- Blue gradient for waveform bars -->
+    <linearGradient id="waveGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#4A90D9" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4A90D9" stop-opacity="1"/>
+    </linearGradient>
+    <!-- Pulsing red dot for recording indicator -->
+    <radialGradient id="recDot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF3B30"/>
+      <stop offset="70%" stop-color="#FF3B30"/>
+      <stop offset="100%" stop-color="#FF3B30" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Button gradient -->
+    <linearGradient id="btnGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4A90D9"/>
+      <stop offset="100%" stop-color="#5BA0E9"/>
+    </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="shadow1" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <filter id="shadow2" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.06"/>
+    </filter>
+    <filter id="shadowBtn" x="-4%" y="-10%" width="108%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#4A90D9" flood-opacity="0.3"/>
+    </filter>
+    <!-- Waveform glow -->
+    <filter id="waveGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Outer ring pulse for record button -->
+    <filter id="pulseGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Clip for phone frame -->
+    <clipPath id="phoneClip">
+      <rect x="0" y="0" width="390" height="844" rx="44"/>
+    </clipPath>
+  </defs>
+
+  <!-- Phone frame -->
+  <rect x="0" y="0" width="390" height="844" rx="44" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+
+  <g clip-path="url(#phoneClip)">
+    <!-- Background -->
+    <rect x="0" y="0" width="390" height="844" fill="#FAFAFA"/>
+
+    <!-- ==================== STATUS BAR ==================== -->
+    <rect x="0" y="0" width="390" height="54" fill="#FFFFFF"/>
+    <!-- Time -->
+    <text x="36" y="36" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="15" font-weight="600" fill="#1C1C1E" text-anchor="start">9:41</text>
+    <!-- Dynamic Island -->
+    <rect x="145" y="10" width="100" height="28" rx="14" fill="#1C1C1E"/>
+    <!-- Signal bars -->
+    <g transform="translate(298, 22)">
+      <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#1C1C1E"/>
+      <rect x="5" y="5" width="3" height="7" rx="0.5" fill="#1C1C1E"/>
+      <rect x="10" y="2" width="3" height="10" rx="0.5" fill="#1C1C1E"/>
+      <rect x="15" y="0" width="3" height="12" rx="0.5" fill="#1C1C1E"/>
+    </g>
+    <!-- WiFi -->
+    <g transform="translate(322, 22)">
+      <path d="M3.5,10 L7,10 L5.25,6 Z" fill="#1C1C1E"/>
+      <path d="M1,8 C3.5,4 7,4 9.5,8" stroke="#1C1C1E" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M-1.5,5.5 C2.5,0 8,0 12,5.5" stroke="#1C1C1E" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- Battery -->
+    <g transform="translate(342, 22)">
+      <rect x="0" y="1" width="24" height="11" rx="2.5" stroke="#1C1C1E" stroke-width="1" fill="none"/>
+      <rect x="25" y="4" width="1.5" height="4.5" rx="0.75" fill="#1C1C1E"/>
+      <rect x="1.5" y="2.5" width="18" height="8" rx="1.5" fill="#2ECC71"/>
+    </g>
+
+    <!-- ==================== HEADER ==================== -->
+    <rect x="0" y="54" width="390" height="56" fill="#FFFFFF"/>
+    <line x1="0" y1="110" x2="390" y2="110" stroke="#F0F0F0" stroke-width="1"/>
+    <!-- Back arrow -->
+    <g transform="translate(20, 82)">
+      <path d="M12,0 L0,0 M0,0 L6,-6 M0,0 L6,6" stroke="#4A90D9" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Title -->
+    <text x="195" y="88" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="17" font-weight="600" fill="#1C1C1E" text-anchor="middle">Your Vision</text>
+    <!-- Microphone icon on right -->
+    <g transform="translate(350, 74)">
+      <rect x="3" y="0" width="10" height="14" rx="5" stroke="#4A90D9" stroke-width="1.5" fill="none"/>
+      <path d="M0,11 C0,18 16,18 16,11" stroke="#4A90D9" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <line x1="8" y1="18" x2="8" y2="22" stroke="#4A90D9" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- ==================== PROGRESS BAR ==================== -->
+    <g transform="translate(0, 124)">
+      <rect x="0" y="0" width="390" height="72" fill="#FFFFFF"/>
+
+      <!-- Step labels and connectors -->
+      <!-- Step 1: Capture (completed) -->
+      <circle cx="60" cy="28" r="14" fill="#2ECC71"/>
+      <path d="M54,28 L58,32 L66,24" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="60" y="56" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2ECC71" text-anchor="middle" font-weight="500">Capture</text>
+
+      <!-- Connector 1-2 -->
+      <line x1="74" y1="28" x2="138" y2="28" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Step 2: Goals (active) -->
+      <circle cx="152" cy="28" r="14" fill="#4A90D9"/>
+      <text x="152" y="33" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" font-weight="700">2</text>
+      <text x="152" y="56" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#4A90D9" text-anchor="middle" font-weight="600">Goals</text>
+
+      <!-- Connector 2-3 -->
+      <line x1="166" y1="28" x2="224" y2="28" stroke="#E0E0E0" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Step 3: Design (upcoming) -->
+      <circle cx="238" cy="28" r="14" fill="none" stroke="#D0D0D0" stroke-width="1.5"/>
+      <text x="238" y="33" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#BBBBBB" text-anchor="middle" font-weight="500">3</text>
+      <text x="238" y="56" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#BBBBBB" text-anchor="middle">Design</text>
+
+      <!-- Connector 3-4 -->
+      <line x1="252" y1="28" x2="316" y2="28" stroke="#E0E0E0" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Step 4: Review (upcoming) -->
+      <circle cx="330" cy="28" r="14" fill="none" stroke="#D0D0D0" stroke-width="1.5"/>
+      <text x="330" y="33" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#BBBBBB" text-anchor="middle" font-weight="500">4</text>
+      <text x="330" y="56" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#BBBBBB" text-anchor="middle">Review</text>
+    </g>
+
+    <!-- Separator -->
+    <line x1="0" y1="196" x2="390" y2="196" stroke="#F0F0F0" stroke-width="1"/>
+
+    <!-- ==================== INSTRUCTION TEXT ==================== -->
+    <text x="195" y="232" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="20" font-weight="600" fill="#1C1C1E" text-anchor="middle">Tell us about your goals</text>
+    <text x="195" y="256" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="20" font-weight="600" fill="#1C1C1E" text-anchor="middle">for this room</text>
+
+    <!-- ==================== WAVEFORM VISUALIZATION ==================== -->
+    <g transform="translate(195, 370)" filter="url(#waveGlow)">
+      <!-- Waveform bars — symmetric, varying heights for natural audio look -->
+      <!-- Left side bars (mirrored from center) -->
+      <rect x="-140" y="-12" width="5" height="24" rx="2.5" fill="url(#waveGrad)" opacity="0.4"/>
+      <rect x="-130" y="-18" width="5" height="36" rx="2.5" fill="url(#waveGrad)" opacity="0.5"/>
+      <rect x="-120" y="-8" width="5" height="16" rx="2.5" fill="url(#waveGrad)" opacity="0.35"/>
+      <rect x="-110" y="-25" width="5" height="50" rx="2.5" fill="url(#waveGrad)" opacity="0.6"/>
+      <rect x="-100" y="-35" width="5" height="70" rx="2.5" fill="url(#waveGrad)" opacity="0.7"/>
+      <rect x="-90" y="-20" width="5" height="40" rx="2.5" fill="url(#waveGrad)" opacity="0.55"/>
+      <rect x="-80" y="-42" width="5" height="84" rx="2.5" fill="url(#waveGrad)" opacity="0.8"/>
+      <rect x="-70" y="-30" width="5" height="60" rx="2.5" fill="url(#waveGrad)" opacity="0.65"/>
+      <rect x="-60" y="-50" width="5" height="100" rx="2.5" fill="url(#waveGrad)" opacity="0.9"/>
+      <rect x="-50" y="-38" width="5" height="76" rx="2.5" fill="url(#waveGrad)" opacity="0.75"/>
+      <rect x="-40" y="-55" width="5" height="110" rx="2.5" fill="url(#waveGrad)" opacity="0.95"/>
+      <rect x="-30" y="-45" width="5" height="90" rx="2.5" fill="url(#waveGrad)" opacity="0.85"/>
+      <rect x="-20" y="-58" width="5" height="116" rx="2.5" fill="url(#waveGrad)" opacity="1"/>
+      <rect x="-10" y="-48" width="5" height="96" rx="2.5" fill="url(#waveGrad)" opacity="0.9"/>
+      <!-- Center bar -->
+      <rect x="-2.5" y="-60" width="5" height="120" rx="2.5" fill="#4A90D9" opacity="1"/>
+      <!-- Right side bars -->
+      <rect x="5" y="-50" width="5" height="100" rx="2.5" fill="url(#waveGrad)" opacity="0.92"/>
+      <rect x="15" y="-56" width="5" height="112" rx="2.5" fill="url(#waveGrad)" opacity="0.95"/>
+      <rect x="25" y="-40" width="5" height="80" rx="2.5" fill="url(#waveGrad)" opacity="0.8"/>
+      <rect x="35" y="-52" width="5" height="104" rx="2.5" fill="url(#waveGrad)" opacity="0.88"/>
+      <rect x="45" y="-35" width="5" height="70" rx="2.5" fill="url(#waveGrad)" opacity="0.7"/>
+      <rect x="55" y="-45" width="5" height="90" rx="2.5" fill="url(#waveGrad)" opacity="0.82"/>
+      <rect x="65" y="-28" width="5" height="56" rx="2.5" fill="url(#waveGrad)" opacity="0.6"/>
+      <rect x="75" y="-38" width="5" height="76" rx="2.5" fill="url(#waveGrad)" opacity="0.72"/>
+      <rect x="85" y="-22" width="5" height="44" rx="2.5" fill="url(#waveGrad)" opacity="0.5"/>
+      <rect x="95" y="-32" width="5" height="64" rx="2.5" fill="url(#waveGrad)" opacity="0.65"/>
+      <rect x="105" y="-15" width="5" height="30" rx="2.5" fill="url(#waveGrad)" opacity="0.45"/>
+      <rect x="115" y="-22" width="5" height="44" rx="2.5" fill="url(#waveGrad)" opacity="0.5"/>
+      <rect x="125" y="-10" width="5" height="20" rx="2.5" fill="url(#waveGrad)" opacity="0.35"/>
+      <rect x="135" y="-6" width="5" height="12" rx="2.5" fill="url(#waveGrad)" opacity="0.3"/>
+    </g>
+
+    <!-- ==================== RECORDING INDICATOR & TIMER ==================== -->
+    <g transform="translate(195, 450)">
+      <!-- Pulsing red dot with outer ring -->
+      <circle cx="-30" cy="0" r="10" fill="#FF3B30" opacity="0.15"/>
+      <circle cx="-30" cy="0" r="6" fill="#FF3B30"/>
+      <!-- Recording label -->
+      <text x="-14" y="5" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="14" fill="#FF3B30" font-weight="500">REC</text>
+      <!-- Timer -->
+      <text x="40" y="5" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="28" fill="#1C1C1E" font-weight="300" letter-spacing="2">0:42</text>
+    </g>
+
+    <!-- ==================== PROMPT SUGGESTION PILLS ==================== -->
+    <g transform="translate(0, 494)">
+      <text x="195" y="0" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="13" fill="#8E8E93" text-anchor="middle" font-weight="400">Suggested goals to mention:</text>
+
+      <!-- Row 1 -->
+      <rect x="40" y="16" width="148" height="36" rx="18" fill="#F0F4FA" stroke="#D6E4F5" stroke-width="1"/>
+      <text x="114" y="39" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="13" fill="#4A90D9" text-anchor="middle" font-weight="500">More storage space</text>
+
+      <rect x="200" y="16" width="155" height="36" rx="18" fill="#F0F4FA" stroke="#D6E4F5" stroke-width="1"/>
+      <text x="277.5" y="39" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="13" fill="#4A90D9" text-anchor="middle" font-weight="500">Modern minimalist look</text>
+
+      <!-- Row 2 -->
+      <rect x="56" y="62" width="138" height="36" rx="18" fill="#F0F4FA" stroke="#D6E4F5" stroke-width="1"/>
+      <text x="125" y="85" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="13" fill="#4A90D9" text-anchor="middle" font-weight="500">Kid-friendly layout</text>
+
+      <rect x="206" y="62" width="126" height="36" rx="18" fill="#F0F4FA" stroke="#D6E4F5" stroke-width="1"/>
+      <text x="269" y="85" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="13" fill="#4A90D9" text-anchor="middle" font-weight="500">Better lighting</text>
+    </g>
+
+    <!-- ==================== "OR TYPE INSTEAD" LINK ==================== -->
+    <text x="195" y="618" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="14" fill="#4A90D9" text-anchor="middle" font-weight="400" text-decoration="underline">Or type instead</text>
+
+    <!-- ==================== TEXT INPUT (COLLAPSED) ==================== -->
+    <g transform="translate(24, 636)">
+      <rect x="0" y="0" width="342" height="46" rx="12" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1"/>
+      <text x="16" y="28" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="15" fill="#C7C7CC">Type your goals here...</text>
+      <!-- Keyboard icon -->
+      <g transform="translate(306, 13)">
+        <rect x="0" y="0" width="22" height="16" rx="3" stroke="#C7C7CC" stroke-width="1.2" fill="none"/>
+        <rect x="4" y="4" width="3" height="2" rx="0.5" fill="#C7C7CC"/>
+        <rect x="9.5" y="4" width="3" height="2" rx="0.5" fill="#C7C7CC"/>
+        <rect x="15" y="4" width="3" height="2" rx="0.5" fill="#C7C7CC"/>
+        <rect x="4" y="9" width="3" height="2" rx="0.5" fill="#C7C7CC"/>
+        <rect x="9.5" y="9" width="3" height="2" rx="0.5" fill="#C7C7CC"/>
+        <rect x="15" y="9" width="3" height="2" rx="0.5" fill="#C7C7CC"/>
+      </g>
+    </g>
+
+    <!-- ==================== DONE RECORDING BUTTON ==================== -->
+    <g transform="translate(24, 706)" filter="url(#shadowBtn)">
+      <rect x="0" y="0" width="342" height="52" rx="14" fill="url(#btnGrad)"/>
+      <!-- Stop icon -->
+      <rect x="128" y="17" width="16" height="16" rx="3" fill="#FFFFFF" opacity="0.9"/>
+      <!-- Button label -->
+      <text x="194" y="32" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="17" fill="#FFFFFF" text-anchor="middle" font-weight="600" letter-spacing="0.3">Done Recording</text>
+    </g>
+
+    <!-- ==================== BOTTOM NOTE ==================== -->
+    <text x="195" y="786" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#AEAEB2" text-anchor="middle" font-weight="400">Speak freely -- we'll extract the key goals</text>
+
+    <!-- ==================== HOME INDICATOR ==================== -->
+    <rect x="141" y="822" width="108" height="5" rx="2.5" fill="#1C1C1E" opacity="0.2"/>
+  </g>
+</svg>

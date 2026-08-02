@@ -1,0 +1,356 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <defs>
+    <!-- Instagram gradient -->
+    <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FEDA75"/>
+      <stop offset="25%" stop-color="#FA7E1E"/>
+      <stop offset="50%" stop-color="#D62976"/>
+      <stop offset="75%" stop-color="#962FBF"/>
+      <stop offset="100%" stop-color="#4F5BD5"/>
+    </linearGradient>
+    <!-- Card shadow -->
+    <filter id="cardShadow" x="-5%" y="-3%" width="110%" height="112%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <!-- Button shadow -->
+    <filter id="btnShadow" x="-10%" y="-20%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#2D5A3D" flood-opacity="0.35"/>
+    </filter>
+    <!-- Mini card shadow -->
+    <filter id="miniShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+    <!-- Wipe line glow -->
+    <filter id="wipeGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Reveal card gradient overlay -->
+    <linearGradient id="cardOverlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.65"/>
+    </linearGradient>
+    <!-- Before room warm tone -->
+    <linearGradient id="beforeBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5E6D3"/>
+      <stop offset="100%" stop-color="#E8D5BE"/>
+    </linearGradient>
+    <!-- After room cool tone -->
+    <linearGradient id="afterBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8F0E8"/>
+      <stop offset="100%" stop-color="#D4E5D8"/>
+    </linearGradient>
+    <!-- CTA gradient -->
+    <linearGradient id="ctaGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2D7A4F"/>
+      <stop offset="100%" stop-color="#3A9B63"/>
+    </linearGradient>
+    <!-- Phone screen clip -->
+    <clipPath id="screenClip">
+      <rect x="0" y="0" width="390" height="844" rx="44"/>
+    </clipPath>
+  </defs>
+
+  <!-- Phone frame -->
+  <rect width="390" height="844" rx="44" fill="#F5F5F7"/>
+  <g clip-path="url(#screenClip)">
+
+    <!-- Background -->
+    <rect width="390" height="844" fill="#F8F9FA"/>
+
+    <!-- ==================== STATUS BAR ==================== -->
+    <rect width="390" height="54" fill="#FFFFFF"/>
+    <!-- Time -->
+    <text x="36" y="36" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="15" font-weight="600" fill="#1C1C1E" text-anchor="start">9:41</text>
+    <!-- Dynamic Island -->
+    <rect x="148" y="10" width="94" height="28" rx="14" fill="#1C1C1E"/>
+    <!-- Signal bars -->
+    <g transform="translate(300, 22)">
+      <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#1C1C1E"/>
+      <rect x="5" y="5" width="3" height="7" rx="0.5" fill="#1C1C1E"/>
+      <rect x="10" y="2" width="3" height="10" rx="0.5" fill="#1C1C1E"/>
+      <rect x="15" y="0" width="3" height="12" rx="0.5" fill="#1C1C1E"/>
+    </g>
+    <!-- WiFi -->
+    <g transform="translate(325, 22)">
+      <path d="M4 10 Q7 3 10 10" stroke="#1C1C1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M1.5 7 Q7 -1 12.5 7" stroke="#1C1C1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <circle cx="7" cy="12" r="1.2" fill="#1C1C1E"/>
+    </g>
+    <!-- Battery -->
+    <g transform="translate(346, 22)">
+      <rect x="0" y="1" width="24" height="11" rx="3" stroke="#1C1C1E" stroke-width="1.2" fill="none"/>
+      <rect x="24.5" y="4" width="2" height="5" rx="1" fill="#1C1C1E" opacity="0.4"/>
+      <rect x="1.5" y="2.5" width="20" height="8" rx="1.5" fill="#34C759"/>
+    </g>
+
+    <!-- ==================== HEADER ==================== -->
+    <rect y="54" width="390" height="52" fill="#FFFFFF"/>
+    <line x1="0" y1="106" x2="390" y2="106" stroke="#E5E5EA" stroke-width="0.5"/>
+    <!-- Back arrow -->
+    <g transform="translate(20, 72)">
+      <path d="M12 2 L4 10 L12 18" stroke="#2D7A4F" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Title -->
+    <text x="195" y="87" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="17" font-weight="600" fill="#1C1C1E" text-anchor="middle">Share Your Reveal</text>
+
+    <!-- ==================== REVEAL CARD (HERO) ==================== -->
+    <g transform="translate(24, 118)">
+      <rect width="342" height="248" rx="16" fill="#FFFFFF" filter="url(#cardShadow)"/>
+      <g clip-path="url(#revealClip)">
+        <clipPath id="revealClip">
+          <rect width="342" height="248" rx="16"/>
+        </clipPath>
+
+        <!-- BEFORE side (left half) -->
+        <rect x="0" y="0" width="171" height="248" fill="url(#beforeBg)"/>
+        <!-- Messy room shapes -->
+        <!-- Floor -->
+        <rect x="0" y="180" width="171" height="68" fill="#D4C4A8" opacity="0.5"/>
+        <!-- Back wall line -->
+        <line x1="0" y1="120" x2="171" y2="120" stroke="#C9B896" stroke-width="0.5" opacity="0.6"/>
+        <!-- Crooked couch -->
+        <rect x="12" y="130" width="70" height="38" rx="4" fill="#B8967A" transform="rotate(-4, 47, 149)"/>
+        <rect x="8" y="125" width="10" height="45" rx="3" fill="#A6836A" transform="rotate(-4, 13, 147)"/>
+        <!-- Scattered pillows -->
+        <ellipse cx="50" cy="138" rx="12" ry="8" fill="#D4A574" transform="rotate(15, 50, 138)"/>
+        <ellipse cx="68" cy="142" rx="10" ry="7" fill="#C49060" transform="rotate(-20, 68, 142)"/>
+        <!-- Messy side table -->
+        <rect x="95" y="140" width="28" height="30" rx="2" fill="#8B7355"/>
+        <rect x="90" y="138" width="38" height="3" rx="1" fill="#7A6548"/>
+        <!-- Clutter on table -->
+        <rect x="97" y="130" width="14" height="8" rx="1" fill="#6B8F71" transform="rotate(8, 104, 134)"/>
+        <circle cx="118" cy="134" r="5" fill="#D4956A"/>
+        <rect x="100" y="124" width="8" height="12" rx="1" fill="#8BA4B8" transform="rotate(-12, 104, 130)"/>
+        <!-- Boxes on floor -->
+        <rect x="130" y="165" width="30" height="24" rx="2" fill="#C4A882"/>
+        <rect x="138" y="155" width="22" height="18" rx="2" fill="#B89B72" transform="rotate(5, 149, 164)"/>
+        <!-- Random items on floor -->
+        <circle cx="30" cy="195" r="8" fill="#A0C4A8" opacity="0.7"/>
+        <rect x="55" y="188" width="20" height="14" rx="2" fill="#C4956A" transform="rotate(-8, 65, 195)"/>
+        <rect x="100" y="192" width="18" height="10" rx="1" fill="#8B9FC4" transform="rotate(12, 109, 197)"/>
+        <!-- Leaning picture frame on wall -->
+        <rect x="25" y="60" width="40" height="50" rx="2" stroke="#B89B72" stroke-width="2" fill="#E8DCC8" transform="rotate(-8, 45, 85)"/>
+        <rect x="30" y="66" width="30" height="36" rx="1" fill="#D4C4A8" transform="rotate(-8, 45, 84)"/>
+        <!-- Another frame, straight -->
+        <rect x="90" y="55" width="55" height="40" rx="2" stroke="#B89B72" stroke-width="2" fill="#E8DCC8"/>
+        <rect x="95" y="60" width="45" height="30" rx="1" fill="#C8D8C4"/>
+        <!-- Lamp tilted -->
+        <line x1="150" y1="95" x2="146" y2="140" stroke="#8B7355" stroke-width="3"/>
+        <ellipse cx="150" cy="88" rx="14" ry="10" fill="#F0DCC0" transform="rotate(8, 150, 88)"/>
+        <!-- "BEFORE" label -->
+        <rect x="8" y="8" width="58" height="22" rx="6" fill="#000" fill-opacity="0.5"/>
+        <text x="37" y="23" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="10" font-weight="600" fill="#FFF" text-anchor="middle">BEFORE</text>
+
+        <!-- AFTER side (right half) -->
+        <rect x="171" y="0" width="171" height="248" fill="url(#afterBg)"/>
+        <!-- Organized room shapes -->
+        <!-- Floor -->
+        <rect x="171" y="180" width="171" height="68" fill="#C4D8C8" opacity="0.4"/>
+        <!-- Back wall line -->
+        <line x1="171" y1="120" x2="342" y2="120" stroke="#B8D0BC" stroke-width="0.5" opacity="0.6"/>
+        <!-- Clean sofa - properly placed -->
+        <rect x="185" y="132" width="72" height="38" rx="6" fill="#7BA68A"/>
+        <rect x="181" y="128" width="10" height="44" rx="4" fill="#6B9678"/>
+        <rect x="261" y="128" width="10" height="44" rx="4" fill="#6B9678"/>
+        <!-- Neat cushions -->
+        <rect x="192" y="136" width="26" height="18" rx="5" fill="#8FC49E"/>
+        <rect x="224" y="136" width="26" height="18" rx="5" fill="#8FC49E"/>
+        <!-- Clean side table -->
+        <rect x="280" y="142" width="30" height="28" rx="3" fill="#8B7355"/>
+        <rect x="276" y="140" width="38" height="3" rx="1.5" fill="#7A6548"/>
+        <!-- Single plant on table -->
+        <circle cx="295" cy="132" r="8" fill="#6B9678"/>
+        <line x1="295" y1="140" x2="295" y2="134" stroke="#5A8568" stroke-width="2"/>
+        <rect x="290" y="140" width="10" height="6" rx="2" fill="#C4956A"/>
+        <!-- Neat rug -->
+        <rect x="188" y="182" width="80" height="45" rx="4" fill="#B8D0BC" opacity="0.6"/>
+        <rect x="192" y="186" width="72" height="37" rx="2" stroke="#A0C0A8" stroke-width="0.5" fill="none"/>
+        <!-- Coffee table -->
+        <rect x="202" y="190" width="48" height="24" rx="4" fill="#A08060"/>
+        <rect x="208" y="194" width="16" height="4" rx="2" fill="#6B9678"/>
+        <circle cx="234" cy="198" r="5" fill="#F0E8D8" stroke="#DDD0BC" stroke-width="0.5"/>
+        <!-- Gallery wall - organized frames -->
+        <rect x="190" y="55" width="36" height="44" rx="2" stroke="#8B7355" stroke-width="1.5" fill="#E8DCC8"/>
+        <rect x="194" y="59" width="28" height="36" rx="1" fill="#D4E5D8"/>
+        <rect x="234" y="58" width="38" height="38" rx="2" stroke="#8B7355" stroke-width="1.5" fill="#E8DCC8"/>
+        <rect x="238" y="62" width="30" height="30" rx="1" fill="#F0E8D8"/>
+        <rect x="280" y="60" width="30" height="36" rx="2" stroke="#8B7355" stroke-width="1.5" fill="#E8DCC8"/>
+        <rect x="284" y="64" width="22" height="28" rx="1" fill="#C8D8C4"/>
+        <!-- Floor lamp - straight -->
+        <line x1="320" y1="98" x2="320" y2="170" stroke="#8B7355" stroke-width="2.5"/>
+        <circle cx="320" cy="170" r="5" fill="#8B7355"/>
+        <path d="M308 88 Q320 78 332 88" fill="#F0DCC0" stroke="#E0CCA8" stroke-width="0.5"/>
+        <line x1="320" y1="82" x2="320" y2="98" stroke="#8B7355" stroke-width="2.5"/>
+        <!-- "AFTER" label -->
+        <rect x="275" y="8" width="58" height="22" rx="6" fill="#2D7A4F" fill-opacity="0.85"/>
+        <text x="304" y="23" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="10" font-weight="600" fill="#FFF" text-anchor="middle">AFTER</text>
+
+        <!-- Wipe/Slider line between before and after -->
+        <line x1="171" y1="0" x2="171" y2="248" stroke="#FFFFFF" stroke-width="3" filter="url(#wipeGlow)"/>
+        <!-- Slider handle -->
+        <circle cx="171" cy="124" r="14" fill="#FFFFFF" stroke="none" filter="url(#miniShadow)"/>
+        <path d="M165 121 L161 124 L165 127" stroke="#1C1C1E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M177 121 L181 124 L177 127" stroke="#1C1C1E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Metadata overlay at bottom of card -->
+        <rect x="0" y="190" width="342" height="58" fill="url(#cardOverlay)"/>
+        <text x="16" y="216" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Living Room Transformation</text>
+        <text x="16" y="234" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="11" font-weight="500" fill="rgba(255,255,255,0.85)">$189 spent  &#183;  6 moves</text>
+        <!-- Roomlift watermark -->
+        <g transform="translate(280, 224)">
+          <rect x="0" y="0" width="52" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+          <!-- Leaf icon tiny -->
+          <path d="M10 14 Q8 8 14 6 Q12 10 14 14" fill="rgba(255,255,255,0.7)" stroke="none"/>
+          <text x="18" y="13" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="8" font-weight="600" fill="rgba(255,255,255,0.8)">roomlift</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ==================== SHARE BUTTONS ROW ==================== -->
+    <text x="24" y="392" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#8E8E93" letter-spacing="0.5">SHARE TO</text>
+
+    <g transform="translate(0, 404)">
+      <!-- Pinterest -->
+      <g transform="translate(30, 0)">
+        <circle cx="28" cy="24" r="24" fill="#E60023"/>
+        <g transform="translate(28, 24)">
+          <path d="M-6 -2 Q-6 -8 0 -10 Q6 -8 6 -2 Q6 4 2 8 L0 2 L-2 8 Q-6 4 -6 -2Z" fill="#FFF"/>
+        </g>
+        <text x="28" y="60" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="10" font-weight="500" fill="#8E8E93" text-anchor="middle">Pinterest</text>
+      </g>
+
+      <!-- Instagram -->
+      <g transform="translate(104, 0)">
+        <circle cx="28" cy="24" r="24" fill="url(#igGrad)"/>
+        <rect x="16" y="12" width="24" height="24" rx="6" stroke="#FFF" stroke-width="2" fill="none"/>
+        <circle cx="28" cy="24" r="6" stroke="#FFF" stroke-width="2" fill="none"/>
+        <circle cx="35" cy="17" r="2" fill="#FFF"/>
+        <text x="28" y="60" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="10" font-weight="500" fill="#8E8E93" text-anchor="middle">Instagram</text>
+      </g>
+
+      <!-- Twitter/X -->
+      <g transform="translate(178, 0)">
+        <circle cx="28" cy="24" r="24" fill="#1C1C1E"/>
+        <text x="28" y="30" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="18" font-weight="800" fill="#FFF" text-anchor="middle">X</text>
+        <text x="28" y="60" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="10" font-weight="500" fill="#8E8E93" text-anchor="middle">Twitter/X</text>
+      </g>
+
+      <!-- Copy Link -->
+      <g transform="translate(252, 0)">
+        <circle cx="28" cy="24" r="24" fill="#E8F5EC"/>
+        <g transform="translate(28, 24)">
+          <path d="M-3 -6 Q-3 -10 1 -10 L5 -10 Q9 -10 9 -6 L9 -2 Q9 2 5 2 L4 2" stroke="#2D7A4F" stroke-width="2" fill="none" stroke-linecap="round" transform="rotate(-45, 3, -4)"/>
+          <path d="M3 6 Q3 10 -1 10 L-5 10 Q-9 10 -9 6 L-9 2 Q-9 -2 -5 -2 L-4 -2" stroke="#2D7A4F" stroke-width="2" fill="none" stroke-linecap="round" transform="rotate(-45, -3, 4)"/>
+        </g>
+        <text x="28" y="60" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="10" font-weight="500" fill="#8E8E93" text-anchor="middle">Copy Link</text>
+      </g>
+
+      <!-- More -->
+      <g transform="translate(326, 0)">
+        <circle cx="28" cy="24" r="24" fill="#F2F2F7"/>
+        <circle cx="20" cy="24" r="2.5" fill="#8E8E93"/>
+        <circle cx="28" cy="24" r="2.5" fill="#8E8E93"/>
+        <circle cx="36" cy="24" r="2.5" fill="#8E8E93"/>
+        <text x="28" y="60" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="10" font-weight="500" fill="#8E8E93" text-anchor="middle">More</text>
+      </g>
+    </g>
+
+    <!-- ==================== PREVIEW SECTION ==================== -->
+    <text x="24" y="500" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#8E8E93" letter-spacing="0.5">PREVIEW HOW IT LOOKS</text>
+
+    <!-- Mini social preview card -->
+    <g transform="translate(24, 512)">
+      <rect width="342" height="108" rx="12" fill="#FFFFFF" filter="url(#miniShadow)"/>
+      <!-- Fake social platform header bar -->
+      <rect width="342" height="32" rx="12" fill="#F8F8FA"/>
+      <rect y="20" width="342" height="12" fill="#F8F8FA"/>
+      <!-- Platform icon -->
+      <circle cx="22" cy="16" r="8" fill="#E0E0E0"/>
+      <text x="36" y="20" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#3C3C43">pinterest.com</text>
+      <!-- Lock icon -->
+      <g transform="translate(112, 10)">
+        <rect x="1" y="5" width="8" height="6" rx="1.5" fill="#34C759"/>
+        <path d="M2.5 5 L2.5 3 Q5 -1 7.5 3 L7.5 5" stroke="#34C759" stroke-width="1.2" fill="none"/>
+      </g>
+
+      <!-- Mini before/after preview -->
+      <g transform="translate(10, 38)">
+        <rect width="155" height="60" rx="6" fill="url(#beforeBg)"/>
+        <!-- Tiny messy shapes -->
+        <rect x="8" y="25" width="30" height="16" rx="2" fill="#B8967A" transform="rotate(-3, 23, 33)"/>
+        <rect x="48" y="28" width="14" height="12" rx="1" fill="#8B7355"/>
+        <rect x="70" y="20" width="20" height="25" rx="1" fill="#C4A882"/>
+        <circle cx="105" cy="35" r="6" fill="#A0C4A8" opacity="0.5"/>
+        <rect x="120" y="30" width="22" height="14" rx="2" fill="#8B9FC4" opacity="0.5"/>
+        <!-- Mini before label -->
+        <rect x="4" y="4" width="32" height="12" rx="3" fill="rgba(0,0,0,0.4)"/>
+        <text x="20" y="13" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="6" font-weight="600" fill="#FFF" text-anchor="middle">BEFORE</text>
+      </g>
+      <g transform="translate(170, 38)">
+        <rect width="162" height="60" rx="6" fill="url(#afterBg)"/>
+        <!-- Tiny organized shapes -->
+        <rect x="8" y="25" width="30" height="16" rx="3" fill="#7BA68A"/>
+        <rect x="48" y="28" width="14" height="12" rx="2" fill="#8B7355"/>
+        <circle cx="60" cy="24" r="5" fill="#6B9678"/>
+        <rect x="80" y="14" width="16" height="18" rx="1" stroke="#8B7355" stroke-width="0.8" fill="#E8DCC8"/>
+        <rect x="100" y="15" width="18" height="16" rx="1" stroke="#8B7355" stroke-width="0.8" fill="#E8DCC8"/>
+        <rect x="122" y="14" width="14" height="18" rx="1" stroke="#8B7355" stroke-width="0.8" fill="#E8DCC8"/>
+        <!-- Mini after label -->
+        <rect x="120" y="4" width="32" height="12" rx="3" fill="rgba(45,122,79,0.7)"/>
+        <text x="136" y="13" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="6" font-weight="600" fill="#FFF" text-anchor="middle">AFTER</text>
+      </g>
+      <!-- Mini divider line -->
+      <line x1="165" y1="38" x2="165" y2="98" stroke="#FFF" stroke-width="1.5"/>
+
+      <!-- Mini metadata -->
+      <text x="14" y="107" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="9" font-weight="500" fill="#8E8E93">Living Room Transformation  &#183;  roomlift.app</text>
+    </g>
+
+    <!-- ==================== TOGGLE ==================== -->
+    <g transform="translate(24, 640)">
+      <rect width="342" height="52" rx="12" fill="#FFFFFF"/>
+      <!-- Toggle label -->
+      <text x="16" y="31" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="15" font-weight="500" fill="#1C1C1E">Include price details</text>
+      <text x="16" y="44" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="11" font-weight="400" fill="#8E8E93">Show "$189 spent" on the shared card</text>
+      <!-- iOS Toggle - ON state -->
+      <g transform="translate(290, 16)">
+        <rect width="51" height="31" rx="15.5" fill="#34C759"/>
+        <circle cx="35" cy="15.5" r="13.5" fill="#FFFFFF"/>
+      </g>
+    </g>
+
+    <!-- ==================== CTA BUTTON ==================== -->
+    <g transform="translate(24, 710)">
+      <rect width="342" height="54" rx="14" fill="url(#ctaGrad)" filter="url(#btnShadow)"/>
+      <!-- Share icon -->
+      <g transform="translate(138, 20)">
+        <path d="M0 5 L0 -3 M-4 0 L0 -5 L4 0" stroke="#FFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-6 4 L-6 9 Q-6 12 -3 12 L3 12 Q6 12 6 9 L6 4" stroke="#FFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="195" y="43" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">Share Now</text>
+    </g>
+
+    <!-- ==================== FOOTER NOTE ==================== -->
+    <g transform="translate(195, 782)">
+      <!-- Lock icon tiny -->
+      <g transform="translate(-68, -8)">
+        <rect x="1" y="4" width="7" height="5" rx="1.5" fill="#8E8E93"/>
+        <path d="M2.5 4 L2.5 2 Q4.5 -1 6.5 2 L6.5 4" stroke="#8E8E93" stroke-width="1" fill="none"/>
+      </g>
+      <text x="0" y="0" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="11" font-weight="400" fill="#8E8E93" text-anchor="middle">Recipients can see the full before &amp; after</text>
+      <text x="0" y="16" font-family="'SF Pro Display', -apple-system, system-ui, sans-serif" font-size="11" font-weight="400" fill="#8E8E93" text-anchor="middle">no login needed</text>
+    </g>
+
+    <!-- ==================== HOME INDICATOR ==================== -->
+    <rect x="127" y="822" width="136" height="5" rx="2.5" fill="#1C1C1E" opacity="0.2"/>
+
+  </g>
+
+  <!-- Phone frame border -->
+  <rect width="390" height="844" rx="44" fill="none" stroke="#D1D1D6" stroke-width="1"/>
+</svg>

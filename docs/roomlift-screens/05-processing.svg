@@ -1,0 +1,333 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F9FC"/>
+      <stop offset="100%" stop-color="#F0F2F8"/>
+    </linearGradient>
+    <linearGradient id="progressActive" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="roomGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E0E7FF"/>
+      <stop offset="100%" stop-color="#C7D2FE"/>
+    </linearGradient>
+    <linearGradient id="sparkleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="tipCardGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFF7ED"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+    <linearGradient id="orbitalGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="8" flood-color="#6366F1" flood-opacity="0.08"/>
+    </filter>
+    <filter id="softShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.06"/>
+    </filter>
+    <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="sparkleGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Clip for phone frame -->
+    <clipPath id="screenClip">
+      <rect x="0" y="0" width="390" height="844" rx="44"/>
+    </clipPath>
+    <!-- Orbital animation dots -->
+    <radialGradient id="dotGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Phone frame -->
+  <rect x="0" y="0" width="390" height="844" rx="44" fill="url(#bgGrad)" clip-path="url(#screenClip)"/>
+
+  <!-- ==================== STATUS BAR ==================== -->
+  <g transform="translate(0,0)">
+    <!-- Status bar background -->
+    <rect x="0" y="0" width="390" height="54" fill="transparent"/>
+    <!-- Time -->
+    <text x="36" y="36" font-family="-apple-system, SF Pro Text, Helvetica Neue, sans-serif" font-size="15" font-weight="600" fill="#1C1C1E" letter-spacing="-0.2">9:41</text>
+    <!-- Dynamic Island -->
+    <rect x="155" y="10" width="80" height="25" rx="12.5" fill="#1C1C1E"/>
+    <!-- Signal bars -->
+    <g transform="translate(290, 22)">
+      <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#1C1C1E"/>
+      <rect x="5" y="4" width="3" height="6" rx="0.5" fill="#1C1C1E"/>
+      <rect x="10" y="2" width="3" height="8" rx="0.5" fill="#1C1C1E"/>
+      <rect x="15" y="0" width="3" height="10" rx="0.5" fill="#1C1C1E"/>
+    </g>
+    <!-- WiFi -->
+    <g transform="translate(316, 22)">
+      <path d="M0 5 Q5 -2 10 5" stroke="#1C1C1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M2 3.5 Q5 0 8 3.5" stroke="#1C1C1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <circle cx="5" cy="6" r="1.2" fill="#1C1C1E"/>
+    </g>
+    <!-- Battery -->
+    <g transform="translate(336, 22)">
+      <rect x="0" y="0" width="25" height="11" rx="2.5" stroke="#1C1C1E" stroke-width="1" fill="none"/>
+      <rect x="26" y="3" width="2" height="5" rx="1" fill="#1C1C1E" opacity="0.4"/>
+      <rect x="1.5" y="1.5" width="17" height="8" rx="1.5" fill="#34C759"/>
+    </g>
+  </g>
+
+  <!-- ==================== STEP PROGRESS BAR ==================== -->
+  <g transform="translate(24, 70)">
+    <!-- Step labels -->
+    <g font-family="-apple-system, SF Pro Text, Helvetica Neue, sans-serif" font-size="10" text-anchor="middle">
+      <!-- Step 1: Capture (completed) -->
+      <g transform="translate(42, 0)">
+        <circle cx="0" cy="0" r="12" fill="#34C759"/>
+        <path d="M-4 0 L-1.5 2.5 L4 -2.5" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text y="26" fill="#34C759" font-weight="600" font-size="11">Capture</text>
+      </g>
+      <!-- Connector 1-2 (completed) -->
+      <line x1="58" y1="0" x2="126" y2="0" stroke="#34C759" stroke-width="2" stroke-linecap="round"/>
+      <!-- Step 2: Goals (completed) -->
+      <g transform="translate(142, 0)">
+        <circle cx="0" cy="0" r="12" fill="#34C759"/>
+        <path d="M-4 0 L-1.5 2.5 L4 -2.5" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text y="26" fill="#34C759" font-weight="600" font-size="11">Goals</text>
+      </g>
+      <!-- Connector 2-3 (completed) -->
+      <line x1="158" y1="0" x2="226" y2="0" stroke="#34C759" stroke-width="2" stroke-linecap="round"/>
+      <!-- Step 3: Design (active) -->
+      <g transform="translate(242, 0)">
+        <circle cx="0" cy="0" r="12" fill="url(#progressActive)" stroke="#6366F1" stroke-width="0"/>
+        <!-- Pulsing ring effect -->
+        <circle cx="0" cy="0" r="15" fill="none" stroke="#6366F1" stroke-width="1" opacity="0.3"/>
+        <circle cx="0" cy="0" r="18" fill="none" stroke="#6366F1" stroke-width="0.5" opacity="0.15"/>
+        <text y="1" font-size="9" fill="white" font-weight="700" text-anchor="middle" dominant-baseline="middle">3</text>
+        <text y="26" fill="#6366F1" font-weight="700" font-size="11">Design</text>
+      </g>
+      <!-- Connector 3-4 (pending) -->
+      <line x1="258" y1="0" x2="296" y2="0" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round" stroke-dasharray="4,3"/>
+      <!-- Step 4: Review (pending) -->
+      <g transform="translate(312, 0)">
+        <circle cx="0" cy="0" r="12" fill="white" stroke="#D1D5DB" stroke-width="1.5"/>
+        <text y="1" font-size="9" fill="#9CA3AF" font-weight="600" text-anchor="middle" dominant-baseline="middle">4</text>
+        <text y="26" fill="#9CA3AF" font-weight="500" font-size="11">Review</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== ROOM ILLUSTRATION WITH MAGIC EFFECTS ==================== -->
+  <g transform="translate(195, 248)">
+    <!-- Outer glow circle -->
+    <circle cx="0" cy="0" r="110" fill="#EEF2FF" opacity="0.7"/>
+    <circle cx="0" cy="0" r="95" fill="#E0E7FF" opacity="0.5"/>
+
+    <!-- Stylized room illustration -->
+    <g transform="translate(-70, -55)">
+      <!-- Room background -->
+      <rect x="0" y="0" width="140" height="110" rx="12" fill="url(#roomGrad)" stroke="#C7D2FE" stroke-width="1"/>
+
+      <!-- Floor -->
+      <rect x="0" y="75" width="140" height="35" rx="0" fill="#B4BDF5" opacity="0.3"/>
+      <line x1="0" y1="75" x2="140" y2="75" stroke="#A5B4FC" stroke-width="0.5" opacity="0.6"/>
+
+      <!-- Wall art / window -->
+      <rect x="15" y="12" width="35" height="28" rx="3" fill="white" opacity="0.7" stroke="#A5B4FC" stroke-width="0.8"/>
+      <rect x="18" y="15" width="29" height="10" rx="1" fill="#C4B5FD" opacity="0.4"/>
+      <rect x="18" y="27" width="13" height="10" rx="1" fill="#93C5FD" opacity="0.4"/>
+      <rect x="33" y="27" width="14" height="10" rx="1" fill="#A5B4FC" opacity="0.4"/>
+
+      <!-- Shelf -->
+      <rect x="90" y="15" width="35" height="4" rx="1" fill="#8B5CF6" opacity="0.3"/>
+      <rect x="95" y="8" width="8" height="7" rx="2" fill="#A78BFA" opacity="0.5"/>
+      <rect x="108" y="10" width="6" height="5" rx="1" fill="#818CF8" opacity="0.4"/>
+      <circle cx="120" cy="11" r="4" fill="#C4B5FD" opacity="0.5"/>
+
+      <!-- Sofa -->
+      <rect x="15" y="55" width="65" height="25" rx="6" fill="#8B5CF6" opacity="0.35"/>
+      <rect x="18" y="52" width="59" height="20" rx="5" fill="#A78BFA" opacity="0.45"/>
+      <!-- Sofa cushions -->
+      <rect x="22" y="55" width="24" height="14" rx="4" fill="#C4B5FD" opacity="0.5"/>
+      <rect x="49" y="55" width="24" height="14" rx="4" fill="#C4B5FD" opacity="0.5"/>
+      <!-- Pillows -->
+      <ellipse cx="28" cy="56" rx="7" ry="5" fill="#DDD6FE" opacity="0.7"/>
+      <ellipse cx="67" cy="56" rx="6" ry="5" fill="#E0E7FF" opacity="0.7"/>
+
+      <!-- Side table -->
+      <rect x="95" y="58" width="25" height="22" rx="3" fill="#7C3AED" opacity="0.2"/>
+      <rect x="93" y="55" width="29" height="4" rx="2" fill="#7C3AED" opacity="0.25"/>
+      <!-- Lamp on table -->
+      <rect x="105" y="42" width="4" height="13" rx="1" fill="#A78BFA" opacity="0.4"/>
+      <path d="M99 42 Q107 32 115 42" fill="#DDD6FE" opacity="0.6"/>
+
+      <!-- Plant -->
+      <rect x="122" y="68" width="8" height="12" rx="2" fill="#7C3AED" opacity="0.25"/>
+      <circle cx="126" cy="64" r="8" fill="#34D399" opacity="0.4"/>
+      <circle cx="122" cy="60" r="5" fill="#6EE7B7" opacity="0.35"/>
+      <circle cx="130" cy="62" r="4" fill="#34D399" opacity="0.3"/>
+
+      <!-- Rug -->
+      <ellipse cx="60" cy="92" rx="40" ry="10" fill="#C4B5FD" opacity="0.25"/>
+    </g>
+
+    <!-- Magic sparkle/transformation overlay -->
+    <!-- Large sparkles -->
+    <g filter="url(#sparkleGlow)">
+      <!-- Sparkle 1 (top-left) -->
+      <g transform="translate(-55, -65)">
+        <line x1="-8" y1="0" x2="8" y2="0" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/>
+        <line x1="0" y1="-8" x2="0" y2="8" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/>
+        <line x1="-5" y1="-5" x2="5" y2="5" stroke="#A78BFA" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="5" y1="-5" x2="-5" y2="5" stroke="#A78BFA" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+      <!-- Sparkle 2 (top-right) -->
+      <g transform="translate(72, -50)">
+        <line x1="-6" y1="0" x2="6" y2="0" stroke="#818CF8" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="0" y1="-6" x2="0" y2="6" stroke="#818CF8" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="-4" y1="-4" x2="4" y2="4" stroke="#818CF8" stroke-width="1" stroke-linecap="round"/>
+        <line x1="4" y1="-4" x2="-4" y2="4" stroke="#818CF8" stroke-width="1" stroke-linecap="round"/>
+      </g>
+      <!-- Sparkle 3 (right) -->
+      <g transform="translate(82, 15)">
+        <line x1="-5" y1="0" x2="5" y2="0" stroke="#C4B5FD" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="#C4B5FD" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+      <!-- Sparkle 4 (bottom-right) -->
+      <g transform="translate(60, 60)">
+        <line x1="-7" y1="0" x2="7" y2="0" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="0" y1="-7" x2="0" y2="7" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="-4.5" y1="-4.5" x2="4.5" y2="4.5" stroke="#A78BFA" stroke-width="1" stroke-linecap="round"/>
+        <line x1="4.5" y1="-4.5" x2="-4.5" y2="4.5" stroke="#A78BFA" stroke-width="1" stroke-linecap="round"/>
+      </g>
+      <!-- Sparkle 5 (bottom-left) -->
+      <g transform="translate(-75, 40)">
+        <line x1="-5" y1="0" x2="5" y2="0" stroke="#818CF8" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="#818CF8" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="-3" y1="-3" x2="3" y2="3" stroke="#818CF8" stroke-width="0.8" stroke-linecap="round"/>
+        <line x1="3" y1="-3" x2="-3" y2="3" stroke="#818CF8" stroke-width="0.8" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Small floating dots -->
+    <circle cx="-85" cy="-20" r="3" fill="#C4B5FD" opacity="0.6"/>
+    <circle cx="90" cy="-30" r="2.5" fill="#A78BFA" opacity="0.5"/>
+    <circle cx="-65" cy="65" r="2" fill="#818CF8" opacity="0.4"/>
+    <circle cx="45" cy="-75" r="2" fill="#DDD6FE" opacity="0.7"/>
+    <circle cx="-40" cy="-80" r="1.5" fill="#A78BFA" opacity="0.5"/>
+    <circle cx="95" cy="45" r="1.5" fill="#C4B5FD" opacity="0.4"/>
+
+    <!-- Transformation arrows (subtle, suggesting change) -->
+    <g opacity="0.3">
+      <path d="M-90 -10 Q-95 -25 -80 -30" stroke="#6366F1" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M-82 -32 L-80 -30 L-83 -28" stroke="#6366F1" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M90 -5 Q100 -20 85 -28" stroke="#6366F1" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M87 -30 L85 -28 L88 -26" stroke="#6366F1" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- ==================== ORBITAL PROGRESS INDICATOR ==================== -->
+  <g transform="translate(195, 248)">
+    <!-- Orbital ring -->
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#E0E7FF" stroke-width="1.5" stroke-dasharray="3,6" opacity="0.6"/>
+
+    <!-- Orbital dots (positioned around the circle to suggest rotation) -->
+    <circle cx="100" cy="0" r="5" fill="#6366F1" opacity="0.9"/>
+    <circle cx="0" cy="100" r="4" fill="#818CF8" opacity="0.6"/>
+    <circle cx="-100" cy="0" r="3.5" fill="#A78BFA" opacity="0.4"/>
+    <circle cx="0" cy="-100" r="3" fill="#C4B5FD" opacity="0.3"/>
+    <!-- In-between dots -->
+    <circle cx="70.7" cy="70.7" r="4.5" fill="#818CF8" opacity="0.75"/>
+    <circle cx="-70.7" cy="70.7" r="3" fill="#A78BFA" opacity="0.35"/>
+    <circle cx="-70.7" cy="-70.7" r="2.5" fill="#C4B5FD" opacity="0.25"/>
+    <circle cx="70.7" cy="-70.7" r="3.5" fill="#A78BFA" opacity="0.5"/>
+  </g>
+
+  <!-- ==================== MAIN TEXT ==================== -->
+  <text x="195" y="385" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue, sans-serif" font-size="24" font-weight="700" fill="#1C1C1E" letter-spacing="-0.5">Creating your design plan...</text>
+
+  <!-- ==================== PROGRESS STEPS LIST ==================== -->
+  <g transform="translate(60, 425)">
+    <!-- Step 1: Analyzing room layout (completed) -->
+    <g transform="translate(0, 0)">
+      <circle cx="14" cy="14" r="14" fill="#ECFDF5"/>
+      <path d="M8 14 L12 18 L20 10" stroke="#34C759" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="40" y="18" font-family="-apple-system, SF Pro Text, Helvetica Neue, sans-serif" font-size="15" fill="#6B7280" font-weight="400" text-decoration="none">
+        <tspan fill="#374151" font-weight="500">Analyzing room layout</tspan>
+      </text>
+    </g>
+
+    <!-- Step 2: Understanding your goals (completed) -->
+    <g transform="translate(0, 48)">
+      <circle cx="14" cy="14" r="14" fill="#ECFDF5"/>
+      <path d="M8 14 L12 18 L20 10" stroke="#34C759" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="40" y="18" font-family="-apple-system, SF Pro Text, Helvetica Neue, sans-serif" font-size="15" fill="#374151" font-weight="500">Understanding your goals</text>
+    </g>
+
+    <!-- Step 3: Generating design options (in progress) -->
+    <g transform="translate(0, 96)">
+      <!-- Blue spinner circle -->
+      <circle cx="14" cy="14" r="14" fill="#EEF2FF"/>
+      <!-- Spinner arc -->
+      <circle cx="14" cy="14" r="9" fill="none" stroke="#E0E7FF" stroke-width="2.5"/>
+      <path d="M14 5 A9 9 0 0 1 23 14" stroke="#6366F1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Small dot at the leading edge -->
+      <circle cx="23" cy="14" r="1.5" fill="#6366F1"/>
+      <text x="40" y="18" font-family="-apple-system, SF Pro Text, Helvetica Neue, sans-serif" font-size="15" fill="#6366F1" font-weight="600">Generating design options</text>
+    </g>
+
+    <!-- Step 4: Finding matching products (pending) -->
+    <g transform="translate(0, 144)">
+      <circle cx="14" cy="14" r="14" fill="#F3F4F6"/>
+      <circle cx="14" cy="14" r="5" fill="none" stroke="#D1D5DB" stroke-width="1.5"/>
+      <text x="40" y="18" font-family="-apple-system, SF Pro Text, Helvetica Neue, sans-serif" font-size="15" fill="#9CA3AF" font-weight="400">Finding matching products</text>
+    </g>
+  </g>
+
+  <!-- ==================== ESTIMATED TIME ==================== -->
+  <g transform="translate(195, 615)">
+    <!-- Clock icon -->
+    <g transform="translate(-75, -4)">
+      <circle cx="0" cy="0" r="7" fill="none" stroke="#9CA3AF" stroke-width="1.2"/>
+      <line x1="0" y1="-3" x2="0" y2="0.5" stroke="#9CA3AF" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="0" y1="0.5" x2="3" y2="2" stroke="#9CA3AF" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+    <text x="0" y="0" text-anchor="middle" font-family="-apple-system, SF Pro Text, Helvetica Neue, sans-serif" font-size="13" fill="#9CA3AF" font-weight="400">Usually takes 30-60 seconds</text>
+  </g>
+
+  <!-- ==================== FUN TIP CARD ==================== -->
+  <g transform="translate(24, 655)">
+    <rect x="0" y="0" width="342" height="90" rx="16" fill="url(#tipCardGrad)" filter="url(#cardShadow)"/>
+    <!-- Subtle border -->
+    <rect x="0" y="0" width="342" height="90" rx="16" fill="none" stroke="#FDE68A" stroke-width="0.5" opacity="0.6"/>
+
+    <!-- Lightbulb emoji area -->
+    <g transform="translate(20, 20)">
+      <circle cx="12" cy="12" r="16" fill="#FEF3C7" opacity="0.6"/>
+      <text x="12" y="17" text-anchor="middle" font-size="18">&#x1F4A1;</text>
+    </g>
+
+    <!-- Tip text -->
+    <text x="56" y="30" font-family="-apple-system, SF Pro Text, Helvetica Neue, sans-serif" font-size="11" fill="#92400E" font-weight="700" letter-spacing="0.5" text-transform="uppercase">DID YOU KNOW?</text>
+    <text x="56" y="50" font-family="-apple-system, SF Pro Text, Helvetica Neue, sans-serif" font-size="13.5" fill="#78350F" font-weight="400" letter-spacing="-0.1">
+      <tspan x="56" dy="0">Roomlift prioritizes reorganization over</tspan>
+      <tspan x="56" dy="19">new purchases to save you money.</tspan>
+    </text>
+  </g>
+
+  <!-- ==================== HOME INDICATOR ==================== -->
+  <rect x="128" y="818" width="134" height="5" rx="2.5" fill="#1C1C1E" opacity="0.18"/>
+</svg>
