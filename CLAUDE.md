@@ -1,5 +1,8 @@
 # Aurora Webdraft — Agent Context
 
+> **STOP — ROOMLIFT WORK DOES NOT BELONG HERE.**  
+> If you are working on a Roomlift ticket (SAT-7xx screens, SAT-9xx, or anything in the "Home design and organizer" Linear project), clone and PR against `timfong888/roomlift` instead. This repo is exclusively for Aurora marketing content.
+
 ## Project
 
 Aurora is an AI infrastructure company offering two products:
