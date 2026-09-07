@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Playwright test files use Playwright's `use` fixture — not React hooks.
+    "tests/**",
+    "playwright.config.ts",
   ]),
 ]);
 

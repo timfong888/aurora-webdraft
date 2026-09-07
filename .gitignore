@@ -13,6 +13,12 @@
 # testing
 /coverage
 
+# Playwright — output dirs and saved auth sessions (never commit sessions)
+/playwright-report/
+/test-results/
+/blob-report/
+tests/acceptance/.auth/
+
 # next.js
 /.next/
 /out/
@@ -30,8 +36,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files — ignore all, but allow the no-secrets example template
 .env*
+!.env.acceptance.example
 
 # vercel
 .vercel
