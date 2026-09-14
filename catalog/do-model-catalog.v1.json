@@ -1,0 +1,46 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-08-15",
+  "source": "GET https://inference.do-ai.run/v1/models",
+  "endpoint_base": "https://inference.do-ai.run/v1",
+  "inference": {
+    "models": [
+      {
+        "id": "deepseek/deepseek-v4-flash",
+        "name": "DeepSeek V4 Flash (Aurora-hosted)",
+        "hugging_face_id": "deepseek-ai/DeepSeek-V4-Flash",
+        "created": 1750118400,
+        "description": "DeepSeek V4 Flash instruction-tuned model served by Aurora.",
+        "license": "MIT",
+        "license_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/blob/main/LICENSE",
+        "model_card": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
+        "context_length": 524288,
+        "max_output_tokens": 393216,
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
+        "pricing": {
+          "prompt": "0.00000014",
+          "completion": "0.00000028",
+          "input_cache_read": "0.000000028"
+        },
+        "supported_sampling_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty"
+        ],
+        "supported_features": [
+          "reasoning",
+          "json_mode",
+          "structured_outputs",
+          "logprobs",
+          "tools"
+        ],
+        "capacity_tpm": 6000000
+      }
+    ]
+  }
+}
