@@ -1,0 +1,377 @@
+# Aurora — Agent & Developer Integration Guide
+
+> Aurora is the Token Optimization Cloud: a reserved, predictable inference API for agentic AI workloads. It exposes a fully OpenAI-compatible interface — switching from OpenAI or any other provider requires only a base URL and API key swap. This document is the complete technical reference for integrating Aurora as your inference provider.
+
+## Quick Start (under 5 minutes)
+
+### Step 1: Get your API token
+
+1. Go to https://portal.aur.lu/ and sign up or log in
+2. Navigate to **Credentials → API Tokens**
+3. Click **New Token**, enter a name, and create it
+4. Copy the token — it is displayed **only once**. Store it securely.
+
+### Step 2: Set your environment variable
+
+```bash
+export AURORA_API_TOKEN="atp_..."
+```
+
+> **Note:** The Aurora Portal and official docs use `AURORA_API_TOKEN` as the conventional variable name. Some integrations (Blocks, CI systems) may use `AURORA_API_KEY`. Either works — both are just names for the same bearer token value.
+
+### Step 3: Verify the connection
+
+```bash
+curl https://ai.aur.lu/v1/models \
+  -H "Authorization: Bearer $AURORA_API_TOKEN"
+```
+
+### Step 4: Send your first completion
+
+```bash
+curl https://ai.aur.lu/v1/chat/completions \
+  -H "Authorization: Bearer $AURORA_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek/deepseek-v4-flash",
+    "messages": [{"role": "user", "content": "Say hello in one sentence."}]
+  }'
+```
+
+---
+
+## API Reference
+
+**Base URL:** `https://ai.aur.lu/v1`
+
+**Authentication:** `Authorization: Bearer <your-token>`
+
+All endpoints follow the OpenAI API specification. Any SDK or framework that supports a custom `base_url` works with Aurora with no additional changes.
+
+### Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/v1/models` | List available models with pricing and capabilities |
+| POST | `/v1/chat/completions` | Chat completion (supports streaming) |
+| POST | `/v1/completions` | Text completion |
+
+### List models
+
+```bash
+curl https://ai.aur.lu/v1/models \
+  -H "Authorization: Bearer $AURORA_API_TOKEN"
+```
+
+### Chat completion (non-streaming)
+
+```bash
+curl https://ai.aur.lu/v1/chat/completions \
+  -H "Authorization: Bearer $AURORA_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek/deepseek-v4-flash",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+```
+
+### Chat completion (streaming)
+
+```bash
+curl https://ai.aur.lu/v1/chat/completions \
+  -H "Authorization: Bearer $AURORA_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek/deepseek-v4-flash",
+    "messages": [{"role": "user", "content": "Hello!"}],
+    "stream": true
+  }'
+```
+
+---
+
+## Available Models
+
+Run `GET /v1/models` for the authoritative live list. The response includes each model's pricing, context length, and supported features.
+
+| Model ID | Name | Context | Modality | Supported Features |
+|----------|------|---------|----------|--------------------|
+| `deepseek/deepseek-v4-flash` | DeepSeek V4 Flash | 1M tokens | text | reasoning, tools, json_mode, structured_outputs, streaming |
+| `deepseek/deepseek-v4-pro` | DeepSeek V4 Pro | 1M tokens | text | reasoning, tools, json_mode, structured_outputs, streaming |
+| `moonshotai/kimi-k3` | Kimi K3 | 1M tokens | text + image | reasoning, tools, json_mode, structured_outputs, streaming |
+| `z-ai/glm-5.2` | GLM 5.2 | 256K tokens | text | reasoning, tools, json_mode, structured_outputs, streaming |
+
+### Choosing a model for agentic workloads
+
+- **High-frequency tool loops / simple tasks** → `deepseek/deepseek-v4-flash` (fastest, lowest cost)
+- **Complex reasoning, coding, planning** → `deepseek/deepseek-v4-pro`
+- **Image + text inputs** → `moonshotai/kimi-k3`
+- **Long-horizon automation and software engineering** → `z-ai/glm-5.2`
+
+All models support tool use (function calling), streaming, JSON mode, and structured outputs.
+
+---
+
+## SDK Integration
+
+### Python (openai SDK)
+
+Install:
+
+```bash
+pip install openai
+```
+
+Basic usage:
+
+```python
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://ai.aur.lu/v1",
+    api_key=os.environ["AURORA_API_TOKEN"]
+)
+
+response = client.chat.completions.create(
+    model="deepseek/deepseek-v4-flash",
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+print(response.choices[0].message.content)
+```
+
+Streaming:
+
+```python
+stream = client.chat.completions.create(
+    model="deepseek/deepseek-v4-flash",
+    messages=[{"role": "user", "content": "Count to 10."}],
+    stream=True
+)
+for chunk in stream:
+    delta = chunk.choices[0].delta.content
+    if delta:
+        print(delta, end="", flush=True)
+```
+
+Tool use (function calling):
+
+```python
+tools = [
+    {
+        "type": "function",
+        "function": {
+            "name": "get_weather",
+            "description": "Get the current weather for a location",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "city": {"type": "string", "description": "City name"}
+                },
+                "required": ["city"]
+            }
+        }
+    }
+]
+
+response = client.chat.completions.create(
+    model="deepseek/deepseek-v4-pro",
+    messages=[{"role": "user", "content": "What is the weather in San Francisco?"}],
+    tools=tools,
+    tool_choice="auto"
+)
+
+if response.choices[0].message.tool_calls:
+    for tool_call in response.choices[0].message.tool_calls:
+        print(f"Tool: {tool_call.function.name}")
+        print(f"Args: {tool_call.function.arguments}")
+```
+
+Structured output (JSON mode):
+
+```python
+response = client.chat.completions.create(
+    model="deepseek/deepseek-v4-flash",
+    messages=[{"role": "user", "content": "Return a JSON object with name and age for a fictional person."}],
+    response_format={"type": "json_object"}
+)
+import json
+data = json.loads(response.choices[0].message.content)
+```
+
+### JavaScript / TypeScript (openai SDK)
+
+```bash
+npm install openai
+```
+
+```typescript
+import OpenAI from "openai";
+
+const client = new OpenAI({
+  baseURL: "https://ai.aur.lu/v1",
+  apiKey: process.env.AURORA_API_TOKEN,
+});
+
+const response = await client.chat.completions.create({
+  model: "deepseek/deepseek-v4-flash",
+  messages: [{ role: "user", content: "Hello!" }],
+});
+console.log(response.choices[0].message.content);
+```
+
+Streaming in Node.js:
+
+```typescript
+const stream = await client.chat.completions.create({
+  model: "deepseek/deepseek-v4-flash",
+  messages: [{ role: "user", content: "Count to 10." }],
+  stream: true,
+});
+
+for await (const chunk of stream) {
+  const delta = chunk.choices[0]?.delta?.content;
+  if (delta) process.stdout.write(delta);
+}
+```
+
+### opencode
+
+1. Run `/connect` in the opencode TUI
+2. Scroll to **Other** and enter `aurora` as the provider ID
+3. Paste your Aurora API token when prompted
+4. Create or update `opencode.json` in your project root:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "aurora": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Aurora Inference",
+      "options": {
+        "baseURL": "https://ai.aur.lu/v1"
+      },
+      "models": {
+        "deepseek/deepseek-v4-flash": { "name": "DeepSeek V4 Flash" },
+        "deepseek/deepseek-v4-pro": { "name": "DeepSeek V4 Pro" },
+        "moonshotai/kimi-k3": { "name": "Kimi K3" },
+        "z-ai/glm-5.2": { "name": "GLM 5.2" }
+      }
+    }
+  }
+}
+```
+
+5. Run `/models` and select a model (e.g. `aurora/deepseek/deepseek-v4-flash`)
+
+---
+
+## Migrating from OpenAI
+
+### Python
+
+```python
+# Before (OpenAI)
+from openai import OpenAI
+client = OpenAI(api_key="sk-...")
+
+# After (Aurora) — only two lines change
+from openai import OpenAI
+client = OpenAI(
+    base_url="https://ai.aur.lu/v1",
+    api_key=os.environ["AURORA_API_TOKEN"]
+)
+# Update model IDs: "gpt-4o" → "deepseek/deepseek-v4-pro", etc.
+```
+
+### Node.js
+
+```typescript
+// Before (OpenAI)
+const client = new OpenAI({ apiKey: "sk-..." });
+
+// After (Aurora)
+const client = new OpenAI({
+  baseURL: "https://ai.aur.lu/v1",
+  apiKey: process.env.AURORA_API_TOKEN,
+});
+// Update model strings to Aurora model IDs
+```
+
+### Model mapping guidance
+
+| OpenAI model | Aurora equivalent | Notes |
+|---|---|---|
+| gpt-4o-mini | `deepseek/deepseek-v4-flash` | Fast, low-cost |
+| gpt-4o | `deepseek/deepseek-v4-pro` | Full reasoning |
+| o3-mini | `deepseek/deepseek-v4-pro` | Reasoning-class |
+| gpt-4-vision | `moonshotai/kimi-k3` | Multimodal |
+
+### Migrating from Anthropic
+
+Aurora's API is OpenAI-compatible. You cannot use the Anthropic SDK directly; use the `openai` Python or JavaScript SDK with Aurora's base URL and API key instead. Replace `claude-*` model IDs with Aurora model IDs.
+
+---
+
+## Reasoning model notes
+
+Several Aurora models (deepseek-v4-flash, deepseek-v4-pro) are reasoning models. When using them:
+
+- The response may include a `reasoning_content` field alongside the standard `content` field
+- `content` contains the final answer; `reasoning_content` contains the chain-of-thought
+- `finish_reason` may be `"length"` if `max_tokens` is too low for the reasoning trace + answer — set `max_tokens` generously (e.g. 8192+) for reasoning-heavy tasks
+- Supported sampling parameters: `reasoning_effort` and `include_reasoning` control the reasoning behavior
+
+Example with reasoning enabled:
+
+```python
+response = client.chat.completions.create(
+    model="deepseek/deepseek-v4-pro",
+    messages=[{"role": "user", "content": "Solve: if 2x + 3 = 11, what is x?"}],
+    max_tokens=8192,
+    extra_body={"include_reasoning": True}
+)
+print("Answer:", response.choices[0].message.content)
+# Access reasoning: response.choices[0].message.model_extra.get("reasoning_content")
+```
+
+---
+
+## Pricing
+
+Usage is billed per 1 million tokens:
+- **Input tokens:** tokens in your prompt
+- **Cached input tokens:** prompt tokens served from KV cache (lower rate — Aurora automatically reuses cache for repeated prefixes in agentic loops)
+- **Output tokens:** tokens generated by the model
+
+Check current per-model rates in the Aurora Portal: **Inference API → Models**. Each model card lists input, cached input, and output rates.
+
+Monitor usage: **Inference API → Dashboard** in the portal (filterable by model and time range).
+
+---
+
+## Portal and account management
+
+| Action | Location |
+|--------|----------|
+| Create API tokens | Portal → Credentials → API Tokens → New Token |
+| View/revoke tokens | Portal → Credentials → API Tokens |
+| View token usage | Portal → Inference API → Dashboard |
+| View model pricing | Portal → Inference API → Models |
+| Create organization | Portal → Settings |
+
+If an API token is exposed, revoke it immediately in the Portal and create a new one. Never commit tokens to source control.
+
+---
+
+## Resources
+
+- **Portal:** https://portal.aur.lu/
+- **Docs:** https://docs.aur.lu/
+- **Getting started:** https://docs.aur.lu/docs/inference/getting-started
+- **Endpoints reference:** https://docs.aur.lu/docs/inference/reference/inference-endpoints
+- **Pricing & Models:** https://docs.aur.lu/docs/inference/reference/inference-pricing
+- **Python SDK guide:** https://docs.aur.lu/docs/inference/sdks/inference-python
+- **opencode guide:** https://docs.aur.lu/docs/inference/sdks/inference-opencode
+- **Support:** support@aurorainfra.ai
