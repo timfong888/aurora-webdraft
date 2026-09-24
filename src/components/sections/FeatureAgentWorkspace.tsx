@@ -30,7 +30,7 @@ export function FeatureAgentWorkspace() {
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold text-violet-400">
-              Feature 2, the Agent Cloud category claim
+              Feature 2
             </p>
             <h2
               id="feature-agent-workspace-heading"

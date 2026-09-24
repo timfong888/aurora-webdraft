@@ -19,9 +19,13 @@ export function FinalCta() {
       />
       <div className="mx-auto max-w-2xl text-center">
         {/* [revised] Placeholder headline — no permanent final-CTA copy has
-            been provided yet. Swap for Tim's copy once available. */}
+            been provided yet. Flagged in the PR description for Tim's
+            review rather than rendered in the visible copy itself (a
+            literal "[revised]" tag reading as live marketing copy was
+            caught by the Marketing agent review, three-agent review loop
+            on Epic #43). Swap for Tim's copy once available. */}
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          [revised] Ready to put your agents to work?
+          Ready to put your agents to work?
         </h2>
         <p className="mt-4 text-slate-300">
           Secure workspaces with compute and storage so anyone can prompt
