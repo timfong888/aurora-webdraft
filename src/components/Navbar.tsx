@@ -5,12 +5,13 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+// [revised] IA rebuilt for the 9/24 Agent Cloud pivot (fixes #28 — dead routes).
+// The old set (Products/Pricing/Customers/Docs/Company) pointed at pages that
+// never existed. These two links are same-page anchors to the two home-page
+// pillars named in CLAUDE.md → "Market Category", so they always resolve.
 const NAV_LINKS = [
-  { label: "Products", href: "/products" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Customers", href: "/customers" },
-  { label: "Docs", href: "/docs" },
-  { label: "Company", href: "/company" },
+  { label: "Inference", href: "/#inference" },
+  { label: "Agentic Workspace", href: "/#agent-workspace" },
 ];
 
 export function Navbar() {
@@ -46,22 +47,17 @@ export function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTAs */}
+        {/* Desktop CTA — "Start now" per CLAUDE.md Hero copy; never a
+            procurement-style CTA ("Reserve Capacity" / "Get a Console"). */}
         <div className="hidden items-center gap-3 md:flex">
           <Link
-            href="/signin"
-            className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
-          >
-            Sign In
-          </Link>
-          <Link
-            href="/contact"
+            href="/contact?interest=Start+now"
             className={cn(
               buttonVariants({ size: "default" }),
               "bg-violet-600 text-white hover:bg-violet-500 focus-visible:ring-violet-500"
             )}
           >
-            Contact Sales
+            Start now
           </Link>
         </div>
 
@@ -125,21 +121,14 @@ export function Navbar() {
           </ul>
           <div className="flex flex-col gap-2 border-t border-white/10 px-4 pb-4 pt-3">
             <Link
-              href="/signin"
-              className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white"
-              onClick={() => setMobileOpen(false)}
-            >
-              Sign In
-            </Link>
-            <Link
-              href="/contact"
+              href="/contact?interest=Start+now"
               onClick={() => setMobileOpen(false)}
               className={cn(
                 buttonVariants({ size: "default" }),
                 "w-full justify-center bg-violet-600 text-white hover:bg-violet-500"
               )}
             >
-              Contact Sales
+              Start now
             </Link>
           </div>
         </div>

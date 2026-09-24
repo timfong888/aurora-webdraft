@@ -8,10 +8,13 @@ import { submitContact, type ContactState } from "@/app/contact/actions";
 
 const INITIAL: ContactState = { status: "idle" };
 
+// [revised] Options updated to match the homepage's new CTA taxonomy
+// ("Start now" / "Talk to an engineer") — the prior options referenced
+// reserved-capacity pricing and a stale event, both superseded 9/24.
 const INTERESTS = [
-  "Reserve capacity",
-  "Talk to us",
-  "RSVP — June 30 event",
+  "Start now",
+  "Talk to an engineer",
+  "Other",
 ] as const;
 
 const fieldClass =

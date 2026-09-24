@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 
+// [revised] Copy updated alongside the homepage rebuild (Epic #43) — the
+// prior copy referenced reserved-capacity pricing and a stale event RSVP,
+// both superseded by the 9/24 Agent Cloud pivot (CLAUDE.md → "Messaging —
+// Use This Directly"). Every homepage CTA routes here, so this page is kept
+// consistent with the new positioning even though it isn't one of the 9
+// section issues.
 export const metadata: Metadata = {
-  title: "Reserve Capacity & Contact",
+  title: "Contact",
   description:
-    "Reserve inference capacity, talk to the Aurora team, or RSVP to Beyond Token Maxing — June 30, 2026, Frontier Tower, San Francisco.",
+    "Start now or talk to an Aurora engineer about serverless open-weight inference and secure agent workspaces.",
   alternates: { canonical: "/contact" },
 };
 
@@ -25,29 +31,29 @@ export default async function ContactPage({
         />
         <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-start">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-violet-400">
-              Reserve Capacity
+            <p className="mb-3 text-sm font-semibold text-violet-400">
+              Agent Cloud
             </p>
             <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Talk to Aurora
             </h1>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              Reserve your inference capacity, get a fixed-cost quote for your
-              agentic workload, or RSVP to our June 30 evening on the economics
-              of agentic AI.
+              Start now on serverless open-weight inference, or talk to an
+              engineer about secure agent workspaces for your team.
             </p>
             <ul className="mt-8 space-y-3 text-sm text-slate-300">
               <li className="flex gap-2">
                 <span className="mt-0.5 shrink-0 text-emerald-400">✓</span>
-                A fixed monthly cost, not a bill that grows with every request.
+                Serverless open-weight inference — an alternative to Together
+                AI, Fireworks AI, and Baseten.
               </li>
               <li className="flex gap-2">
                 <span className="mt-0.5 shrink-0 text-emerald-400">✓</span>
-                Owned GPU capacity — available now through the Blackwell crunch.
+                Secure, full-RBAC agent workspaces to build, run, and ship.
               </li>
               <li className="flex gap-2">
                 <span className="mt-0.5 shrink-0 text-emerald-400">✓</span>
-                Managed serving with optimization built in — zero infra ops burden.
+                Zero data retention — private, confidential compute.
               </li>
             </ul>
             <p className="mt-8 text-sm text-slate-400">

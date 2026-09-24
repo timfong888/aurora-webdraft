@@ -9,6 +9,11 @@ export const SITE_URL = (
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Aurora";
-export const SITE_TAGLINE = "The Token Optimization Cloud";
+// [revised] Tagline updated for the 9/24 Agent Cloud pivot (CLAUDE.md → "Market
+// Category"). The prior tagline ("The Token Optimization Cloud") is retired.
+export const SITE_TAGLINE = "The Agent Cloud";
+// [revised] Description rewritten to drop all reserved-capacity/fixed-cost
+// language (forbidden post-pivot) and lead with the two home-page pillars:
+// serverless open-weight inference + secure agent workspaces.
 export const SITE_DESCRIPTION =
-  "Reserve your inference capacity and Aurora optimizes every token against it — full agentic throughput at a fixed, predictable cost, instead of a per-token bill with no ceiling.";
+  "Aurora is the Agent Cloud — serverless, open-weight-model inference (an alternative to Together AI, Fireworks AI, and Baseten) paired with secure, full-RBAC agent workspaces so anyone can prompt agents that build, run, and ship.";
