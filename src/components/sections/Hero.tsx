@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section
       aria-label="Hero"
-      className="relative overflow-hidden px-6 pb-24 pt-28 sm:px-8 lg:px-12"
+      className="relative isolate overflow-hidden px-6 pb-24 pt-28 sm:px-8 lg:px-12"
     >
       <div
         aria-hidden="true"

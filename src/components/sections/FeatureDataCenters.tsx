@@ -25,9 +25,9 @@ export function FeatureDataCenters() {
             Data centers across multiple jurisdictions
           </h2>
           <p className="mt-3 text-sm leading-6 text-slate-400">
-            Aurora runs open-weight models from data centers in multiple
-            jurisdictions, with access controls you can verify. Contact us
-            to discuss data residency and access requirements.
+            Aurora operates infrastructure across multiple jurisdictions, with
+            verifiable access controls. Contact us to discuss data residency and
+            access requirements.
           </p>
           <Link
             href="/contact?interest=Talk+to+an+engineer"

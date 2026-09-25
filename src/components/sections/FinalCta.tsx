@@ -11,7 +11,7 @@ export function FinalCta() {
   return (
     <section
       aria-label="Get started"
-      className="relative overflow-hidden border-t border-white/10 px-6 py-20 sm:px-8"
+      className="relative isolate overflow-hidden border-t border-white/10 px-6 py-20 sm:px-8"
     >
       <div
         aria-hidden="true"

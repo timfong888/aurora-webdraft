@@ -13,7 +13,7 @@ import Link from "next/link";
 // stub for a direct link to that URL instead.
 export const metadata: Metadata = {
   title: "GPU Clusters",
-  description: "Aurora GPU Clusters — rent & buy. Page pending relink.",
+  description: "Aurora GPU Clusters — rent & buy. Coming soon.",
   alternates: { canonical: "/gpu-clusters" },
   robots: { index: false, follow: true },
 };
@@ -25,12 +25,11 @@ export default function GpuClustersPage() {
         GPU Clusters
       </p>
       <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-        Page pending relink
+        Coming soon
       </h1>
       <p className="mt-4 max-w-md text-slate-300">
-        This placeholder stands in for Aurora&apos;s existing GPU Clusters
-        (rent &amp; buy) page, which this rebuild does not touch. Talk to us
-        for GPU cluster availability.
+        Aurora GPU clusters are available to rent or purchase. Contact us to
+        discuss availability for your workload.
       </p>
       <Link
         href="/contact?interest=Talk+to+an+engineer"
