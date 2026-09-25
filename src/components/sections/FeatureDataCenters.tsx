@@ -16,7 +16,7 @@ export function FeatureDataCenters() {
       <div className="mx-auto max-w-3xl">
         <div className="rounded-xl border border-white/10 bg-slate-900 p-6 sm:p-8">
           <p className="text-xs font-semibold text-slate-400">
-            Feature 3
+            Infrastructure
           </p>
           <h2
             id="feature-data-centers-heading"

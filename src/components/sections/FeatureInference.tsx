@@ -30,7 +30,7 @@ export function FeatureInference() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
             <p className="text-sm font-semibold text-violet-400">
-              Feature 1
+              Inference
             </p>
             <h2
               id="feature-inference-heading"

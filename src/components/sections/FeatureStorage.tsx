@@ -15,7 +15,7 @@ export function FeatureStorage() {
     >
       <div className="mx-auto max-w-3xl">
         <div className="rounded-xl border border-white/10 bg-slate-900 p-6 sm:p-8">
-          <p className="text-xs font-semibold text-slate-400">Feature 4</p>
+          <p className="text-xs font-semibold text-slate-400">Storage</p>
           <h2
             id="feature-storage-heading"
             className="mt-2 text-xl font-semibold text-white sm:text-2xl"
