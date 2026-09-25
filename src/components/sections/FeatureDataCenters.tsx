@@ -25,11 +25,9 @@ export function FeatureDataCenters() {
             Data centers across multiple jurisdictions
           </h2>
           <p className="mt-3 text-sm leading-6 text-slate-400">
-            Aurora runs Chinese-origin open-weight models — DeepSeek, Qwen,
-            GLM, and Kimi — from infrastructure whose jurisdiction and access
-            controls you can verify, so Western and global buyers get the
-            cost savings of those models without routing through
-            Chinese-hosted infrastructure.
+            Aurora runs open-weight models from data centers in multiple
+            jurisdictions, with access controls you can verify. Contact us
+            to discuss data residency and access requirements.
           </p>
           <Link
             href="/contact?interest=Talk+to+an+engineer"
