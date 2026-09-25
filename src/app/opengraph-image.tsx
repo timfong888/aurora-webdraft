@@ -1,7 +1,13 @@
 import { ImageResponse } from "next/og";
 
+// [revised] Rewritten for the 9/24 Agent Cloud pivot — the prior copy
+// ("The Token Optimization Cloud," "Reserve capacity," "Token maxing is
+// O(N)") is the exact superseded positioning CLAUDE.md says not to use
+// anywhere. Caught by the Marketing agent review (three-agent review loop,
+// Epic #43) as a stale og:image:alt that would resurface old messaging on
+// social shares.
 export const alt =
-  "Aurora — The Token Optimization Cloud. Reserved inference for agentic workloads.";
+  "Aurora — Agent Cloud. Where your agents work in the cloud.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,12 +36,10 @@ export default function OpengraphImage() {
             style={{
               fontSize: 22,
               color: "#a78bfa",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
               marginLeft: "8px",
             }}
           >
-            The Token Optimization Cloud
+            Agent Cloud
           </span>
         </div>
 
@@ -55,22 +59,22 @@ export default function OpengraphImage() {
               lineHeight: 1.1,
             }}
           >
-            <span>Per-token pricing hands every agent&nbsp;</span>
-            <span style={{ color: "#a78bfa" }}>an unlimited credit card.</span>
+            <span>Where your agents&nbsp;</span>
+            <span style={{ color: "#a78bfa" }}>work in the cloud.</span>
           </div>
           <div style={{ fontSize: 30, color: "#cbd5e1" }}>
-            Reserve capacity. Optimize every token against it. Fixed,
-            predictable cost.
+            Secure workspaces with compute and storage so anyone can prompt
+            agents that build, run and ship.
           </div>
         </div>
 
         <div style={{ display: "flex", gap: "32px", fontSize: 26 }}>
-          <span style={{ color: "#f87171", fontWeight: 700 }}>
-            Token maxing is O(N)
+          <span style={{ color: "#cbd5e1", fontWeight: 700 }}>
+            Serverless open-weight inference
           </span>
           <span style={{ color: "#64748b" }}>·</span>
-          <span style={{ color: "#34d399", fontWeight: 700 }}>
-            Optimization is O(1)
+          <span style={{ color: "#a78bfa", fontWeight: 700 }}>
+            Secure agent workspaces
           </span>
         </div>
       </div>

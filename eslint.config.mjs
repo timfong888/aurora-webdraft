@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Gitignored Vercel CLI build output (`vercel build` writes bundled/
+    // minified JS here) — was missing from this override, so `vercel build`
+    // followed by `npm run lint` picked up minified files as source.
+    ".vercel/**",
   ]),
 ]);
 
