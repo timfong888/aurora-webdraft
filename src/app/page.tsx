@@ -3,8 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { PrimaryUseCase } from "@/components/sections/PrimaryUseCase";
 import { FeatureInference } from "@/components/sections/FeatureInference";
 import { FeatureAgentWorkspace } from "@/components/sections/FeatureAgentWorkspace";
-import { FeatureDataCenters } from "@/components/sections/FeatureDataCenters";
-import { FeatureStorage } from "@/components/sections/FeatureStorage";
+import { Infrastructure } from "@/components/sections/Infrastructure";
 import { FinalCta } from "@/components/sections/FinalCta";
 
 // ─── Structured data (JSON-LD) ─────────────────────────────────────────────
@@ -33,11 +32,12 @@ const JSON_LD = {
   ],
 };
 
-// Homepage — a thin composition of the 9 sections defined in Epic #43.
+// Homepage — MVP v1 (9/28). Storage and Data Centers sections replaced by
+// one Infrastructure section of three sub-page tiles.
 // Nav lives in Navbar.tsx (rendered by layout), Footer in Footer.tsx.
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col bg-slate-950 text-white">
+    <main className="flex flex-1 flex-col bg-ink text-cream">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
@@ -46,8 +46,7 @@ export default function Home() {
       <PrimaryUseCase />
       <FeatureInference />
       <FeatureAgentWorkspace />
-      <FeatureDataCenters />
-      <FeatureStorage />
+      <Infrastructure />
       <FinalCta />
     </main>
   );

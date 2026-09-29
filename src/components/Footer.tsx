@@ -1,77 +1,56 @@
 import Link from "next/link";
+import Image from "next/image";
 
-// Section 9 — Footer (issue #52). Fixes #28 for footer routes: the old
-// footer linked /products, /docs, /company, /customers, and /signin, none of
-// which exist. Those groups are removed rather than backed by invented pages
-// or invented social handles (no source for either in CLAUDE.md).
-//
-// White Label and Data Center build-out are second-pass sub-pages (#53/#54)
-// — they link to minimal coming-soon stubs per #52's AC, not full pages.
-// GPU Clusters is supposed to link to Tim's existing, already-ranking page;
-// see src/app/gpu-clusters/page.tsx for why that link is a flagged stub
-// instead — it could not be located in this repo or on the live deployment.
+// Section 9 — Footer, MVP v1.
 const PRODUCT_LINKS = [
   { label: "Inference", href: "/#inference" },
   { label: "Agentic Workspace", href: "/#agent-workspace" },
-  { label: "GPU Clusters", href: "/gpu-clusters" },
 ];
 
-const MORE_LINKS = [
-  { label: "White Label", href: "/white-label" },
-  { label: "Data Center Build-Out", href: "/data-centers" },
+const INFRA_LINKS = [
+  { label: "GPU as a Service", href: "/gpu-clusters" },
+  { label: "Data Center Build Out", href: "/data-centers" },
+  { label: "White Label AI Cloud", href: "/white-label" },
 ];
+
+const COMPANY_LINKS = [
+  { label: "Talk to an engineer", href: "/contact?interest=Talk+to+an+engineer" },
+];
+
+function Column({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+  return (
+    <div className="flex flex-col gap-2.5">
+      <p className="text-xs uppercase tracking-[0.08em] text-faint">{title}</p>
+      {links.map((l) => (
+        <Link key={l.href} href={l.href} className="text-sm text-dim hover:text-cream">
+          {l.label}
+        </Link>
+      ))}
+    </div>
+  );
+}
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 px-6 py-12 sm:px-8">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-          <div>
-            <p className="mb-3 text-xs font-semibold text-slate-400">
-              Product
+    <footer className="px-6 pb-10 pt-14 sm:px-10 lg:px-16">
+      <div className="mx-auto flex max-w-[1312px] flex-col gap-10">
+        <div className="flex flex-col justify-between gap-10 md:flex-row">
+          <div className="flex max-w-[280px] flex-col gap-2.5">
+            <Image src="/aurora-logo.png" alt="Aurora" width={81} height={30} className="h-[30px] w-auto" />
+            <p className="text-sm leading-relaxed text-faint">
+              Secure, persisted compute and storage where AI agents build, run,
+              and ship.
             </p>
-            <ul className="space-y-2 text-sm text-slate-400">
-              {PRODUCT_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
-          <div>
-            <p className="mb-3 text-xs font-semibold text-slate-400">
-              More from Aurora
-            </p>
-            <ul className="space-y-2 text-sm text-slate-400">
-              {MORE_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="mb-3 text-xs font-semibold text-slate-400">
-              Company
-            </p>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li>
-                <Link href="/contact" className="hover:text-white">
-                  Contact
-                </Link>
-              </li>
-            </ul>
+          <div className="flex flex-wrap gap-14">
+            <Column title="Product" links={PRODUCT_LINKS} />
+            <Column title="Infrastructure" links={INFRA_LINKS} />
+            <Column title="Company" links={COMPANY_LINKS} />
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <p className="text-sm font-bold text-white">
-            <span className="text-violet-400">▲</span> Aurora
-          </p>
-          <p className="text-xs text-slate-400">© 2026 Aurora. All rights reserved.</p>
+        <div className="flex justify-between border-t border-line pt-5 text-[13px] text-faint">
+          <span>© Aurora</span>
+          <span className="font-mono">Agent Cloud</span>
         </div>
       </div>
     </footer>
