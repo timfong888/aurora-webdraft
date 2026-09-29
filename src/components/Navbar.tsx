@@ -9,6 +9,8 @@ import Image from "next/image";
 const NAV_LINKS = [
   { label: "Inference", href: "/#inference" },
   { label: "Agentic Workspace", href: "/#agent-workspace" },
+  { label: "GPU as a Service", href: "/gpu-clusters" },
+  { label: "Data Center Builds", href: "/data-centers" },
 ];
 
 const CTA_HREF = "/contact?interest=Start+for+Free";
