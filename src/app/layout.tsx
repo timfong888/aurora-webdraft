@@ -11,7 +11,6 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
   weight: ["300", "500", "600"],
-  axes: ["opsz"],
 });
 
 const plexSans = IBM_Plex_Sans({
