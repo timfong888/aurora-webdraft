@@ -1,76 +1,68 @@
-import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+// Section 5 — Secure Agent Workspaces, MVP v1.
+const BULLETS = [
+  "Full-RBAC agent environments, not shared tenancy",
+  "Hosted deployment — build and ship without leaving the workspace",
+  "Production-ready compute and storage for every agent",
+];
 
-// Section 5 — Feature 2: Secure Agent Workspaces (issue #48). The
-// differentiator, not the traffic driver — this is the "Agent Cloud"
-// category claim. Names the actual capability rather than asserting the
-// category alone (Modal and GMI Cloud both already contest generic "agent"
-// language — see CLAUDE.md → "Competitive Reference").
-// Copy source: CLAUDE.md → "Feature 2 — Secure Agent Workspaces (Section 5)".
-const FEATURES = [
-  "Secure, full-RBAC agent environments with API access inside the workspace",
-  "Dedicated, segregated compute and storage for agents to build and deploy",
+const CAPABILITIES = [
+  "API access within the workspace",
   "Sandboxes for agentic workloads",
-  "Hosted deployment environments to build and ship to production",
+  "Deploy straight to production",
 ];
 
 export function FeatureAgentWorkspace() {
   return (
-    <>
-      {/* Visual divider — separates the inference lead-gen section (Feature 1)
-          from the differentiator (Feature 2), per #48's AC. */}
-      <div className="border-t border-white/10 bg-slate-900" aria-hidden="true" />
-
-      <section
-        id="agent-workspace"
-        aria-labelledby="feature-agent-workspace-heading"
-        className="border-b border-white/10 bg-slate-900 px-6 py-24 sm:px-8"
-      >
-        <div className="mx-auto max-w-5xl">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold text-violet-400">
-              Agent Workspaces
-            </p>
-            <h2
-              id="feature-agent-workspace-heading"
-              className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl"
-            >
-              Secure agent workspaces
-            </h2>
-            <p className="mt-4 text-slate-300">
-              Persisted, secure compute where agents build, run, and ship —
-              not raw GPU rental.
-            </p>
+    <section
+      id="agent-workspace"
+      aria-labelledby="workspace-heading"
+      className="scroll-mt-20 border-b border-line bg-surface px-6 py-20 sm:px-10 lg:px-16"
+    >
+      <div className="mx-auto flex max-w-[1312px] flex-col-reverse items-center gap-12 lg:flex-row lg:gap-16">
+        <div className="flex w-full flex-1 flex-col gap-4 rounded-[14px] border border-line bg-surface p-7">
+          <div className="flex gap-2.5">
+            <div className="flex flex-1 flex-col gap-2 rounded-[10px] bg-surface-2 p-4">
+              <span className="text-xs text-faint">Compute</span>
+              <span className="text-[15px] text-cream">Segregated · dedicated</span>
+            </div>
+            <div className="flex flex-1 flex-col gap-2 rounded-[10px] bg-surface-2 p-4">
+              <span className="text-xs text-faint">Storage</span>
+              <span className="text-[15px] text-cream">Persisted per agent</span>
+            </div>
           </div>
-
-          <ul className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2">
-            {FEATURES.map((feature) => (
-              <li
-                key={feature}
-                className="flex gap-2 rounded-lg border border-white/10 bg-slate-950 p-4 text-sm text-slate-300"
-              >
-                <span className="mt-0.5 shrink-0 text-emerald-400" aria-hidden="true">
-                  ✓
-                </span>
-                {feature}
+          <ul className="flex flex-col gap-2.5 rounded-[10px] bg-surface-2 p-4" role="list">
+            {CAPABILITIES.map((c) => (
+              <li key={c} className="flex items-center justify-between gap-4">
+                <span className="text-sm text-cream">{c}</span>
+                <span className="tag">enabled</span>
               </li>
             ))}
           </ul>
-
-          <div className="mt-10 flex justify-center">
-            <Link
-              href="/contact?interest=Start+now"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "bg-violet-600 px-8 text-white hover:bg-violet-500"
-              )}
-            >
-              Start now
-            </Link>
-          </div>
         </div>
-      </section>
-    </>
+
+        <div className="flex max-w-[520px] flex-1 flex-col gap-4">
+          <span className="eyebrow">Agent workspace</span>
+          <h2
+            id="workspace-heading"
+            className="font-display text-3xl font-medium leading-[1.15] text-cream sm:text-[34px]"
+          >
+            Secure agent workspaces.
+          </h2>
+          <p className="text-[17px] leading-relaxed text-dim">
+            Secure environments where agents build, run and ship.
+          </p>
+          <ul className="mt-1.5 flex flex-col gap-2.5" role="list">
+            {BULLETS.map((b) => (
+              <li key={b} className="flex items-baseline gap-2.5 text-[15px] text-cream">
+                <span className="text-amber" aria-hidden="true">
+                  —
+                </span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
